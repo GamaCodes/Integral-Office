@@ -10,6 +10,7 @@ const cors = require('cors');
 const session = require('express-session');
 const passport = require('./config/passport');
 
+//Para conectar tu base de datos a Atlas debes en el env.DB cambiarlo por la ruta que te indica Atlas
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((x) => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
@@ -50,7 +51,7 @@ const auth = require('./routes/auth');
 app.use('/', index);
 app.use('/', auth);
 
-// Uncomment this line for production
+// Uncomment this line for production o si no entendiste antes de deployar
 // app.get('/*', (req, res) => res.sendFile(__dirname + '/public/index.html'));
 
 module.exports = app;
