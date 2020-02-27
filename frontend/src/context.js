@@ -1,7 +1,7 @@
 import React, { createContext, Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import AUTH_SERVICE from './services/auth'
-import axios from 'axios'
+// import axios from 'axios'
 export const MyContext = createContext()
 
 class MyProvider extends Component {
@@ -9,6 +9,9 @@ class MyProvider extends Component {
     formSignup: {
       name: '',
       email: '',
+      adress: '',
+      phone: '', 
+      purpose: '',  
       password: ''
     },
     formLogin: {
@@ -57,10 +60,10 @@ class MyProvider extends Component {
   handleSignupSubmit = async e => {
     e.preventDefault()
     const form = this.state.formSignup
-    this.setState({ formSignup: { name: '', email: '', password: '' } })
+    this.setState({ formSignup: { name: '', email: '', adress: '', phone: '', purpose:'', password: '' } })
     return await AUTH_SERVICE.SIGNUP(form)
   }
-//
+
   handleLoginSubmit = e => {
     e.preventDefault()
     const form = this.state.formLogin

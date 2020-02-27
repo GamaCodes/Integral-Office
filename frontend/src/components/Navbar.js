@@ -21,20 +21,21 @@ function Navbar({ history }) {
             pos="fixed"
             top={0}
             zIndex="99"
-            backgroundColor="white"
+            backgroundColor="#9E5A63"
             w="100vw"
             h="10vh"
             p={8}
             align="center"
             justify="space-between"
           >
-            <Text fontSize="xl" fontWeight="bolder" onClick={() => go('/')}>
+            <Text fontSize="xl" fontWeight="bolder" onClick={() => go('/')} color='#314455'>
               INTEGRAL OFFICE
             </Text>
             <Menu>
               <MenuButton
                 as={IconButton}
                 variant="outline"
+                backgroundColor="white"
                 variantColor="whity"
                 aria-label="Menu"
                 size="lg"
@@ -43,16 +44,16 @@ function Navbar({ history }) {
               <MenuList>
                 {!context.state.isLogged && (
                   <>
-                    <MenuItem onClick={() => go('/')}>Home</MenuItem>
-                    <MenuItem onClick={() => go('/login')}>Login</MenuItem>
-                    <MenuItem onClick={() => go('/signup')}>Signup</MenuItem>
+                    <MenuItem onClick={() => go('/')}>Inicio</MenuItem>
+                    <MenuItem onClick={() => go('/login')}>Iniciar sesion</MenuItem>
+                    <MenuItem onClick={() => go('/signup')}>Registrate</MenuItem>
                   </>
                 )}
                 {context.state.isLogged && (
                   <>
-                    <MenuItem onClick={() => go('/')}>Home</MenuItem>
-                    <MenuItem onClick={() => go('/profile')}>Profile</MenuItem>
-                    <MenuItem onClick={context.handleLogout}>Logout</MenuItem>
+                    <MenuItem onClick={() => go('/')}>Servicios</MenuItem>
+                    <MenuItem onClick={() => go('/profile')}>Perfil</MenuItem>
+                    <MenuItem onClick={context.handleLogout}>Cerrar sesion</MenuItem>
                   </>
                 )}
               </MenuList>

@@ -42,18 +42,18 @@ export default function Signup({ history }) {
         return (
           <Flex
             mt="10vh"
-            backgroundColor="softpink.100"
+            backgroundColor="bg.100"
             w="100vw"
             h="90vh"
             align="center"
             justify="center"
           >
-            <Form submit={submit} bgColor="white" title="Signup">
+            <Form submit={submit} bgColor="white" title="Registrate">
               <FormControl isRequired>
                 <InputGroup>
                   <InputLeftAddon children={<Icon name="user" />} />
                   <Input
-                    placeholder="Name"
+                    placeholder="Nombre de la empresa."
                     name="name"
                     type="text"
                     value={context.state.formSignup.name}
@@ -66,7 +66,7 @@ export default function Signup({ history }) {
                   <InputLeftAddon children={<Icon name="email" />} />
                   <Input
                     onChange={context.handleSignupInput}
-                    placeholder="Email"
+                    placeholder="Email."
                     name="email"
                     type="email"
                     value={context.state.formSignup.email}
@@ -75,10 +75,46 @@ export default function Signup({ history }) {
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
+                  <InputLeftAddon children={<Icon name="add" />} />
+                  <Input
+                    placeholder="Direccion"
+                    name="adress"
+                    type="text"
+                    value={context.state.formSignup.adress}
+                    onChange={context.handleSignupInput}
+                  />
+                </InputGroup>
+              </FormControl>
+              <FormControl isRequired>
+                <InputGroup>
+                  <InputLeftAddon children={<Icon name="phone" />} />
+                  <Input
+                    placeholder="Telefono"
+                    name="phone"
+                    type="number"
+                    value={context.state.formSignup.phone}
+                    onChange={context.handleSignupInput}
+                  />
+                </InputGroup>
+              </FormControl>
+              <FormControl isRequired>
+                <InputGroup>
+                  <InputLeftAddon children={<Icon name="calendar" />} />
+                  <Input
+                    placeholder="Giro"
+                    name="purpose"
+                    type="text"
+                    value={context.state.formSignup.purpose}
+                    onChange={context.handleSignupInput}
+                  />
+                </InputGroup>
+              </FormControl>
+              <FormControl isRequired>
+                <InputGroup>
                   <InputLeftAddon children={<Icon name="lock" />} />
                   <Input
                     onChange={context.handleSignupInput}
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     name="password"
                     type="password"
                     value={context.state.formSignup.password}

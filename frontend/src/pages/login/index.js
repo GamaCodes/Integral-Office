@@ -33,13 +33,13 @@ export default function Login({ history }) {
         return (
           <Flex
             mt="10vh"
-            backgroundColor="softpink.100"
+            backgroundColor="bg.100"
             w="100vw"
             h="90vh"
             align="center"
             justify="center"
           >
-            <Form submit={submit} bgColor="white" title="Login">
+            <Form submit={submit} bgColor="white" title="Iniciar sesion">
               <FormControl isRequired>
                 <InputGroup>
                   <InputLeftAddon children={<Icon name="email" />} />

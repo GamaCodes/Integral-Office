@@ -8,7 +8,7 @@ export default function CardProfile({ user, history }) {
       borderWidth="1px"
       w="350px"
       mt="10vh"
-      backgroundColor="softpink.100"
+      backgroundColor="bg.100"
       bor
     >
       <Stack spacing={3}>
@@ -22,8 +22,8 @@ export default function CardProfile({ user, history }) {
         <Button
           size="lg"
           color="white"
-          variantColor="hotpink"
-          backgroundColor="hotpink.500"
+          variantColor="bttn"
+          backgroundColor="bttn.500"
         >
           Editar foto
         </Button>
