@@ -9,13 +9,13 @@ import {
 import { MyContext } from '../context'
 
 function Footer({ history }) {
-  const go = path => history.push(path)
+  // const go = path => history.push(path)
   return (
     <MyContext.Consumer>
     {context => {
         return (
         <Flex
-            pos="fixed"
+            
             bottom={0}
             zIndex="99"
             textAlign="center"

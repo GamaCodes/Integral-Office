@@ -18,7 +18,7 @@ function Navbar({ history }) {
       {context => {
         return (
           <Flex
-            pos="fixed"
+            
             top={0}
             zIndex="99"
             backgroundColor="#9E5A63"
