@@ -14,6 +14,14 @@ const userSchema = new Schema(
     },
   },
   {
+    cards: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Card'
+      }
+    ]
+  },
+  {
     timestamps: true,
     versionKey: false
   }

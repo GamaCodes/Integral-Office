@@ -5,7 +5,8 @@ import React, {useState}  from "react";
   Box,
   Button,
   Text,
-  Collapse
+  Collapse,
+  Badge
 } from "@chakra-ui/core";
 import { Carousel } from 'react-bootstrap';
 
@@ -87,6 +88,11 @@ function Home({ width, history }) {
                   alt={e.name}
                 />
                 <Carousel.Caption>
+                <Stack isInline>
+                  <Badge variant="outline" variantColor="green">
+                    Default
+                  </Badge>
+                </Stack>
                   <Button size="sm" mt="1rem" color="#314455">
                     {e.name}
                   </Button>

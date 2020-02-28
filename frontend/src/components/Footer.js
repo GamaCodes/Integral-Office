@@ -19,25 +19,25 @@ function Footer({ history }) {
             bottom={0}
             zIndex="99"
             textAlign="center"
-            backgroundColor="#9E5A63"
+            backgroundColor="#17252A"
             w="100vw"
             h="20vh"
             p={8}
             justify="center"
         >
-                <Breadcrumb separator="-" spacing={3}>
+                <Breadcrumb separator="-" spacing={3} color="bg.100">
                 <BreadcrumbItem >
-                    <BreadcrumbLink href="/"> - Inicio</BreadcrumbLink>
+                    <BreadcrumbLink href="/" color="bg.100" > - Inicio</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
-                    <BreadcrumbLink href="/about">Privacidad</BreadcrumbLink>
+                    <BreadcrumbLink href="/about" color="bg.100">Privacidad</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem isCurrentPage>
-                    <BreadcrumbLink href="/contact">Ayuda</BreadcrumbLink>
+                    <BreadcrumbLink href="/contact" color="bg.100">Ayuda</BreadcrumbLink>
                 </BreadcrumbItem>
                 <br></br>
                 <BreadcrumbItem>
-                        <BreadcrumbLink href="/about">Terminos y Condiciones</BreadcrumbLink>
+                        <BreadcrumbLink href="/about" color="bg.100">Terminos y Condiciones</BreadcrumbLink>
                     </BreadcrumbItem>
                 </Breadcrumb>
 
@@ -48,3 +48,7 @@ function Footer({ history }) {
   )
 }
 export default withRouter(Footer)
+
+
+
+

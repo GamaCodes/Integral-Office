@@ -21,7 +21,7 @@ function Navbar({ history }) {
             
             top={0}
             zIndex="99"
-            backgroundColor="#9E5A63"
+            backgroundColor="#2B7A78"
             w="100vw"
             h="10vh"
             p={8}
