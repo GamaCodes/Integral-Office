@@ -1,8 +1,6 @@
 import React, {useState}  from "react";
  import {
   Stack,
-  Heading,
-  Box,
   Button,
   Text,
   Collapse,
@@ -51,31 +49,24 @@ function Home({ width, history }) {
     setIndex(selectedIndex);
     setDirection(e.direction);
   };
-  const handleToggle = (id) => setShow(!show);
+  const handleToggle = () => {setShow(!show)};
   return (
     <Stack
       minH="90vh"
-      backgroundColor="bg.100"
+      backgroundColor="c1.100"
       textAlign="center"
       w="100vw"
       p={8}
       spacing={8}
     >
-      <Heading as="h1" size="2xl" color="white">
-        I
-        <Box as="span" color="#314455">
-          NTEGRAL
-        </Box>
-        <Box as="span" color="#white">
-          -
-        </Box>
-        <Box as="span" color="#314455">
-          OFFIC
-        </Box>
-        <Box as="span" color="#white">
-          E
-        </Box>
-      </Heading>
+      <Stack alignItems="center" marginLeft={["17vw", '10vw', '38vw']} w={["50vw", '50vw', '20vw']}>
+        <img
+          className="d-block w-100"
+          src="../NameIO.png"
+          alt="IntegralOffice"
+        />
+      </Stack>
+
       <Stack alignItems="center" marginLeft={["1vw", '10vw', '20vw']} marginRight={["1vw", '10vw', '20vw']}>
         <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
         {
@@ -88,42 +79,37 @@ function Home({ width, history }) {
                   alt={e.name}
                 />
                 <Carousel.Caption>
-                <Stack isInline>
-                  <Badge variant="outline" variantColor="green">
-                    Default
-                  </Badge>
+                <Stack isInline alignItems="center">
+                <Badge variant="solid"  backgroundColor="c4.100" mb={["20vw", '20vw', "55vh"]} >
+                     <Text fontSize="xl" color="c2.100">{e.name}</Text>
+                </Badge>
                 </Stack>
-                  <Button size="sm" mt="1rem" color="#314455">
-                    {e.name}
-                  </Button>
-                  <br />
-                  <Button size="sm" onClick={()=>handleToggle(i)} mt="1rem" color="#314455">
+                  <Button size="sm" onClick={()=>handleToggle(i)} mt="1rem" backgroundColor="c2.100">
                     Mostrar {show ? "menos" : "mas"}
                   </Button>
                 </Carousel.Caption>
               </Carousel.Item>
             )
           })
-          
         }
-          
         </Carousel>
       </Stack>
 
       <Collapse startingHeight={20} isOpen={show}>
-      {
-        service.map((e, i) => {
-            return (
-              <p key={i}>{e.text}</p>
-            )
-            })   
-      }
+      
+        <>
+        <p>Integral Office</p>
+        <p> Aqui debe estar la explicacion de los servicios</p>
+        <p>popopopopopopopopopopopopopop</p>
+        <p>popopopopopopopopopopopopopopopop</p>
+        </>
+      
       </Collapse>
       <br></br>
     
       <Stack alignItems="center">
         <Button
-          backgroundColor="bttn.100"
+          backgroundColor="c2.100"
           variantColor="bttn"
           onClick={() => go("/signup")}
         >

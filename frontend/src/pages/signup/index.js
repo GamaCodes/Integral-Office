@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { IoIosBusiness } from "react-icons/io"
 import {
   Flex,
   FormControl,
@@ -6,7 +7,8 @@ import {
   InputLeftAddon,
   Input,
   Icon,
-  useToast
+  useToast,
+  Box
 } from '@chakra-ui/core'
 import { MyContext } from '../../context'
 import Form from '../../components/Form'
@@ -41,8 +43,7 @@ export default function Signup({ history }) {
       {context => {
         return (
           <Flex
-            mt="10vh"
-            backgroundColor="bg.100"
+            backgroundColor="c1.100"
             w="100vw"
             h="90vh"
             align="center"
@@ -51,7 +52,7 @@ export default function Signup({ history }) {
             <Form submit={submit} bgColor="white" title="Registrate">
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Icon name="user" />} />
+                  <InputLeftAddon children={<Box as={IoIosBusiness} color="c2.100"/>} />
                   <Input
                     placeholder="Nombre de la empresa."
                     name="name"
@@ -63,7 +64,7 @@ export default function Signup({ history }) {
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Icon name="email" />} />
+                  <InputLeftAddon children={<Icon name="email" color="c2.100"/>} />
                   <Input
                     onChange={context.handleSignupInput}
                     placeholder="Email."
@@ -75,19 +76,19 @@ export default function Signup({ history }) {
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Icon name="add" />} />
+                  <InputLeftAddon children={<Icon name="calendar" color="c2.100"/>} />
                   <Input
                     placeholder="Direccion"
-                    name="adress"
+                    name="address"
                     type="text"
-                    value={context.state.formSignup.adress}
+                    value={context.state.formSignup.address}
                     onChange={context.handleSignupInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Icon name="phone" />} />
+                  <InputLeftAddon children={<Icon name="phone" color="c2.100"/>} />
                   <Input
                     placeholder="Telefono"
                     name="phone"
@@ -99,7 +100,7 @@ export default function Signup({ history }) {
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Icon name="calendar" />} />
+                  <InputLeftAddon children={<Icon name="add" color="c2.100"/>} />
                   <Input
                     placeholder="Giro"
                     name="purpose"
@@ -111,7 +112,7 @@ export default function Signup({ history }) {
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Icon name="lock" />} />
+                  <InputLeftAddon children={<Icon name="lock" color="c2.100" />} />
                   <Input
                     onChange={context.handleSignupInput}
                     placeholder="Contraseña"

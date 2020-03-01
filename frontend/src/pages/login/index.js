@@ -32,8 +32,7 @@ export default function Login({ history }) {
       {context => {
         return (
           <Flex
-            mt="10vh"
-            backgroundColor="bg.100"
+            backgroundColor="c1.100"
             w="100vw"
             h="90vh"
             align="center"
@@ -42,7 +41,7 @@ export default function Login({ history }) {
             <Form submit={submit} bgColor="white" title="Iniciar sesion">
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Icon name="email" />} />
+                  <InputLeftAddon children={<Icon name="email" color="c2.100" />} />
                   <Input
                     onChange={context.handleLoginInput}
                     placeholder="Email"
@@ -54,7 +53,7 @@ export default function Login({ history }) {
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Icon name="lock" />} />
+                  <InputLeftAddon children={<Icon name="lock" color="c2.100" />} />
                   <Input
                     onChange={context.handleLoginInput}
                     placeholder="Password"

@@ -8,7 +8,7 @@ import {
   MenuItem,
   Text,
   IconButton
-} from '@chakra-ui/core'
+} from "@chakra-ui/core"
 import { MyContext } from '../context'
 
 function Navbar({ history }) {
@@ -21,17 +21,20 @@ function Navbar({ history }) {
             
             top={0}
             zIndex="99"
-            backgroundColor="#2B7A78"
+            backgroundColor="c2.100"
             w="100vw"
             h="10vh"
-            p={8}
             align="center"
             justify="space-between"
           >
-            <Text fontSize="xl" fontWeight="bolder" onClick={() => go('/')} color='#314455'>
-              INTEGRAL OFFICE
+            <Text onClick={() => go('/')} w={["12vw", '5vw', '3.5vw']} ml="2vw">
+            <img
+              className="d-block w-100"
+              src="../Logo.png"
+              alt="IntegralOffice"
+            />
             </Text>
-            <Menu>
+            <Menu >
               <MenuButton
                 as={IconButton}
                 variant="outline"
@@ -40,6 +43,7 @@ function Navbar({ history }) {
                 aria-label="Menu"
                 size="lg"
                 icon="menu"
+                mr={["2vw", '2vw', '2vw']}
               ></MenuButton>
               <MenuList>
                 {!context.state.isLogged && (

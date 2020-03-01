@@ -33,39 +33,22 @@ const customTheme = {
   },
   colors: {
     ...theme.colors,
-    bttn: {
-      '100': '#97AABD',
-      '200': '#97AABD',
-      '300': '#97AABD',
-      '400': '#97AABD',
-      '500': '#97AABD',
-      '600': '#97AABD',
-      '700': '#97AABD',
-      '800': '#97AABD',
-      '900': '#97AABD'
-    },
-    bg: {
+    c1: {
       '100': '#3AAFA9',
-      '200': '#3AAFA9',
-      '300': '#3AAFA9',
-      '400': '#3AAFA9',
-      '500': '#3AAFA9',
-      '600': '#3AAFA9',
-      '700': '#3AAFA9',
-      '800': '#3AAFA9',
-      '900': '#3AAFA9'
     },
-    whity: {
-      '100': 'white',
-      '200': 'white',
-      '300': 'white',
-      '400': 'white',
-      '500': 'white',
-      '600': 'white',
-      '700': 'white',
-      '800': 'white',
-      '900': 'white'
+    c2: {
+      '100': '#2B7A78',
+    },
+    c3: {
+      '100': '#17252A',
+    },
+    c4: {
+      '100': '#DEF2F1',
+    },
+    c5: {
+      '100': 'FEFFFF',
     }
+
   }
 }
 export default customTheme

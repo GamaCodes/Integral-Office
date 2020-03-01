@@ -6,7 +6,7 @@ function Form({ width, children, title, submit, bgColor }) {
       backgroundColor={bgColor}
       onSubmit={submit}
       as="form"
-      w={width || '350px'}
+      w={["90vw", '70vw', '50vw']}
       boxShadow="xl"
     >
       <Stack spacing={8} p={8}>
@@ -15,9 +15,11 @@ function Form({ width, children, title, submit, bgColor }) {
         </Heading>
         {children}
         <Button
-          backgroundColor="bttn.100"
-          variantColor="bttn"
+          backgroundColor="c2.100"
+          variantColor="c2"
           type="submit"
+          w={["30vw", '20vw', '10vw']}
+          justify="center"
         >
           {title}
         </Button>
