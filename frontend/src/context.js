@@ -81,7 +81,7 @@ class MyProvider extends Component {
           isLogged: false,
           formLogin: { email: '', password: '' }
         })
-        return { user: null, msg: 'Invalid username/password.' }
+        return { user: null, msg: ' Usuario o contraseña incorrecta.' }
       })
       .finally(() => this.setState({ formLogin: { email: '', password: '' } }))
   }

@@ -34,7 +34,7 @@ const service = [
     src:'https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg?cs=srgb&dl=accounting-analytics-balance-black-and-white-209224.jpg&fm=jpg',
     text:'Contabilidad'
   },{
-    name:'Cuentas',
+    name:'Finanzas',
     src:'https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?cs=srgb&dl=person-holding-blue-ballpoint-pen-on-white-notebook-669610.jpg&fm=jpg',
     text:'Cuentas'
   }

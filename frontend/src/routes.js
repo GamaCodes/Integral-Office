@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Signup from './pages/signup'
 import Login from './pages/login'
 import Profile from './pages/profile'
-import NotFound from './components/404/NotFound.js';
+import NotFound from './components/NotFound.js';
 
 export default () => (
   
