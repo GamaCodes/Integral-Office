@@ -132,7 +132,25 @@ class MyProvider extends Component {
       .finally(() => this.setState({ formLogin: { email: '', password: '' } }))
   }
 
-  // UPLOAD = e 
+    uploadPhoto = e => {
+      const formPhoto = new FormData()
+      formPhoto.append('imgURL', e.target.files[0])
+      AUTH_SERVICE.uploadPhoto(formPhoto)
+      .then(({ data}) => {
+        this.setState({ loggedUser: data.user})
+      })
+      .catch(err => {
+        console.log('entro en el catch')
+        return err
+      })
+    }
+  
+
+
+
+
+
+
   render() {
     const {
       state,
@@ -142,7 +160,8 @@ class MyProvider extends Component {
       handleLoginSubmit,
       handleLogout,
       handleUpdateUser,
-      handleUpdateUserSubmit
+      handleUpdateUserSubmit,
+      uploadPhoto
     } = this
     return (
       <MyContext.Provider
@@ -154,7 +173,8 @@ class MyProvider extends Component {
           handleLoginSubmit,
           handleLogout,
           handleUpdateUser,
-          handleUpdateUserSubmit
+          handleUpdateUserSubmit,
+          uploadPhoto
         }}
       >
         {this.props.children}

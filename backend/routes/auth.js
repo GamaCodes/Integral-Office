@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const Card= require('../models/Card');
+const Card = require('../models/Supplie');
+const Property = require('../models/Property')
 // Require 3do modelo
 const passport = require('../config/passport');
 const uploadCloud = require('../config/cloudinary')
@@ -38,18 +39,20 @@ router.get('/', (req, res, next) => {
   res.status(200).json({ msg: 'Working' });
 });
 
-router.get('/services', isAuth, (req, res, next) => {
-  res.status(200).json({ msg: 'Working' });
-});
+// router.get('/services', isAuth, (req, res, next) => {
+//   res.status(200).json({ msg: 'Working' });
+// });
 
 
-router.post('/update', isAuth, async (req, res, next) => {
-  const { name, email, phone, address, purpose } = req.body
-  console.log(name, email, phone, address, purpose)
-  const user = await User.findByIdAndUpdate(
-    req.user._id,
-  )
-}) 
+// router.patch('/update', isAuth, async (req, res, next) => {
+//   const {id} = req.params
+//   const { name, email, phone, address, purpose } = req.body
+//   await User.findByIdAndUpdate(id, {
+//     name, email, phone, address, purpose 
+//   })
+//   res.status(200).json({message: "User update"})
+// })
+
 
 //Upload Routes/auths linea 43
 router.post(
@@ -59,7 +62,7 @@ router.post(
   async (req, res, next) => {
     const { secure_url } = req.file
     const user = await User.findByIdAndUpdate(
-      req.user._id,
+      req.user.id,
       { imgURL: secure_url },
       { new: true }
     )
@@ -67,54 +70,62 @@ router.post(
   }
 )
 
-//Create Routes/auths linea 57
-router.post('/create', isAuth, async (req, res, next) => {
-  const { name, imageURL,description } = req.body
+
+
+
+
+
+
+
+
+router.post('/create/property', isAuth, async (req, res, next) => {
+  //Destructurar y pasar todos los elementos del modelo para que los pueda recibir
+  const { imageURL, direction, description } = req.body
   const { _id } = req.user
-  const card = await Card.create({ name, imageURL, description })
-  const cardPopulated = await Card.findById(card._id).populate('author')
+  const property = await Property.create({ imageURL, direction, description, author: _id })
+  const propertyPopulated = await Property.findById(property._id).populate('author')
   const user = await User.findByIdAndUpdate(
     _id,
-    { $push: { cards: card._id } },
+    { $push: { properties: property._id } },
     { new: true }
   ).populate({
-    path: 'card',
+    path: 'property',
     populate: {
       path: 'author',
       model: 'User'
     }
   })
-  return res.status(201).json({ user, card: cardPopulated })
+  return res.status(201).json({ user, property: propertyPopulated })
 })
 
 //Read Routes/auths linea 76
-router.get('/cards', async (req, res, next) => {
-  const cards = await Card.find()
+router.get('/property', async (req, res, next) => {
+  const property = await Property.find()
     .sort({ createdAt: -1 })
-  res.status(200).json({ cards })
+  res.status(200).json({ property })
 })
 //Delete pero tu investgale
 
 
-router.get('/cards/:id', async (req, res, next) => {
+router.get('/property/:id', async (req, res, next) => {
   const {id} = req.params;
-  const card = await Card.findById(id)
-  res.status(200).json(card)
+  const property = await Property.findById(id)
+  res.status(200).json(property)
 })
 
-router.patch('/cards/:id', async(req, res, next) => {
+router.patch('/property/:id', async(req, res, next) => {
   const {id} = req.params
-  const {name,description} = req.body
-  await Card.findByIdAndUpdate(id, {
-    name, description, 
+  const {direction,description} = req.body
+  await Property.findByIdAndUpdate(id, {
+    direction, description, 
   })
-  res.status(200).json({message: "card update"})
+  res.status(200).json({message: "property update"})
 })
 
-router.delete('/cards/:id', async(req, res, next) => {
+router.delete('/property/:id', async(req, res, next) => {
   const {id} = req.params
-  await Card.findByIdAndDelete(id)
-  res.status(200).json({ message: "card delete"})
+  await Property.findByIdAndDelete(id)
+  res.status(200).json({ message: "property delete"})
 })
  
 module.exports = router;

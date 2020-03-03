@@ -54,17 +54,6 @@ export default function CardProfile({ user, history, white, width, height }) {
                 alt={user.name}
               />
             </Flex>
-            <Flex justify="center">
-              <Button
-                w="10vw"
-                color="white"
-                variantColor="c2"
-                backgroundColor="c2.100"
-              >
-                Editar foto
-              </Button>
-            </Flex>
-            
 
             <Flex justify="center"> 
               <InputGroup>

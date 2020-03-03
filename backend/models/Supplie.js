@@ -1,11 +1,11 @@
 const { Schema, model } = require('mongoose');
 
-const cardSchema = new Schema (
+const supplieSchema = new Schema (
 {
-    id: String,
     codigo: String,
+    tipo: String,
     descripcion: String,
-    codProveedor: String,
+    codProv: String,
     unidadMed: String,
     precioUnit: Number,
     actComer: String,
@@ -17,8 +17,6 @@ const cardSchema = new Schema (
     cantMinima: Number,
     tiempoEntrega: Number,
     periodoOrdenar: String,
-    reqHistSemanal: String,
-    semanasStock: Number
   },
 {
     timestamps: true,
@@ -26,4 +24,4 @@ const cardSchema = new Schema (
   }
 );
 
-module.exports = model('Card', cardSchema);
+module.exports = model('Supplie', supplieSchema);

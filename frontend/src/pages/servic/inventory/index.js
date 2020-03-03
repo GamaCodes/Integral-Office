@@ -1,13 +1,13 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Button } from "@chakra-ui/core";
 
 function Inventory ({ history }) {
   const context = useContext(MyContext)
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
   })
-  // const go = path => history.push(path);
+  const go = path => history.push(path);
   return (
     <Stack
       minH="90vh"
@@ -24,6 +24,51 @@ function Inventory ({ history }) {
           alt="IntegralOffice"
         />
       </Stack>
+      <Button
+          backgroundColor="c2.100"
+          variantColor="bttn"
+          w="10vw"
+          onClick={() => go("/services")}
+        >
+          + Agregar Insumo
+        </Button>
+        <Button
+          backgroundColor="c2.100"
+          variantColor="bttn"
+          w="10vw"
+          onClick={() => go("/services/inventory/property")}
+        >
+         + Agregar Producto
+        </Button>
+        <Button
+          backgroundColor="c2.100"
+          variantColor="bttn"
+          w="10vw"
+          onClick={() => go("/signup")}
+        >
+          + Aumentar Stock
+        </Button>
+      <Stack backgroundColor="white">
+      <Tabs isFitted variant="enclosed">
+        <TabList mb="1em">
+          <Tab>Insumos </Tab>
+          <Tab>Productos</Tab>
+          <Tab>Stock</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <p>one!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>tree!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+      </Stack>
+      
     </Stack>
   )}
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/core";
 
 function Accounting ({ history }) {
   const context = useContext(MyContext)
@@ -23,6 +23,26 @@ function Accounting ({ history }) {
           src="../accounting.png"
           alt="IntegralOffice"
         />
+      </Stack>
+      <Stack backgroundColor="white">
+      <Tabs isFitted variant="enclosed">
+        <TabList mb="1em">
+          <Tab>Descarga de Facturas</Tab>
+          <Tab>Declaraciones</Tab>
+          <Tab>Facturacion</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <p>one!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>tree!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
       </Stack>
     </Stack>
   )}

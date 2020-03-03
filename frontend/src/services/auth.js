@@ -26,7 +26,7 @@ const AUTH_SERVICE = {
     const { data } = await service.post('/update', form)
     return data
   },
-  UPLOAD: async photo => {
+  uploadPhoto: async photo => {
     return await service.post('/upload', photo)
   }
 }

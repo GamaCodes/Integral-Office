@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/core";
 
 function Quotation ({ history }) {
   const context = useContext(MyContext)
@@ -23,6 +23,26 @@ function Quotation ({ history }) {
           src="../quotation.png"
           alt="IntegralOffice"
         />
+      </Stack>
+      <Stack backgroundColor="white">
+      <Tabs isFitted variant="enclosed">
+        <TabList mb="1em">
+          <Tab>Cotizacion Resumida</Tab>
+          <Tab>Cotizacion Detallada</Tab>
+          <Tab>Cotizacion para cliente</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <p>one!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>tree!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
       </Stack>
     </Stack>
   )}

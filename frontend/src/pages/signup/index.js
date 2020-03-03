@@ -20,7 +20,7 @@ export default function Signup({ history }) {
       .handleSignupSubmit(e)
       .then(response => {
         toast({
-          title: 'Account created.',
+          title: 'Cuenta Creada.',
           description: "Tu cuenta ha sido creada satisfactoriamente",
           status: 'success',
           duration: 9000,
