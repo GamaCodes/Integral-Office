@@ -109,7 +109,7 @@ function Home({ width, history }) {
       <Stack alignItems="center">
         <Button
           backgroundColor="c2.100"
-          variantColor="bttn"
+          color="white"
           onClick={() => go("/signup")}
         >
           Comience ahora!

@@ -6,7 +6,11 @@ const supplieSchema = new Schema (
     tipo: String,
     descripcion: String,
     codProv: String,
-    unidadMed: String,
+    unidadMed:{
+      type:String,
+      required: true,
+      enum:["Gramos","Kilos","Litros","Metros","Pieza","Piezas","Otro"]
+    },
     precioUnit: Number,
     actComer: String,
     moneda: String,

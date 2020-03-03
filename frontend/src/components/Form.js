@@ -16,7 +16,7 @@ function Form({ width, children, title, submit, bgColor }) {
         {children}
         <Button
           backgroundColor="c2.100"
-          variantColor="c2"
+          color="white"
           type="submit"
           w={["30vw", '20vw', '10vw']}
           justify="center"

@@ -44,14 +44,13 @@ router.get('/', (req, res, next) => {
 // });
 
 
-// router.patch('/update', isAuth, async (req, res, next) => {
-//   const {id} = req.params
-//   const { name, email, phone, address, purpose } = req.body
-//   await User.findByIdAndUpdate(id, {
-//     name, email, phone, address, purpose 
-//   })
-//   res.status(200).json({message: "User update"})
-// })
+router.post('/update', isAuth, async (req, res, next) => {
+  const { _id, name, email, phone, address, purpose } = req.body
+  await User.updateOne({_id}, {
+    name, email, phone, address, purpose 
+  })
+  res.status(200).json({message: "User update"})
+})
 
 
 //Upload Routes/auths linea 43

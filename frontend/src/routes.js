@@ -11,6 +11,7 @@ import Accounting from './pages/servic/accounting'
 import Finance from './pages/servic/finance'
 import Inventory from './pages/servic/inventory'
 import Property from './pages/servic/inventory/property'
+import Supplies from './pages/servic/inventory/supplies'
 import Purchases from './pages/servic/purchases'
 import Quotation from './pages/servic/quotation'
 import Sales from './pages/servic/sales'
@@ -36,6 +37,7 @@ export default () => (
       <Route exact path="/services/finance" component={Finance} /> 
       <Route exact path="/services/inventory" component={Inventory} /> 
       <Route exact path="/services/inventory/property" component={Property} /> 
+      <Route exact path="/services/inventory/supplies" component={Supplies} /> 
       <Route exact path="/services/purchases" component={Purchases} /> 
       <Route exact path="/services/quotation" component={Quotation} /> 
       <Route exact path="/services/sales" component={Sales} /> 

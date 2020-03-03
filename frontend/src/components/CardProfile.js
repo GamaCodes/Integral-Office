@@ -44,9 +44,10 @@ export default function CardProfile({ user, history, white, width, height }) {
             w={width || '80vw'}
             h={height || '70vh'}
             boxShadow="xl"
+            marginTop="1vh"
           >
             <Stack spacing={3}>
-            <Flex justify="center">
+            <Flex justify="center" marginTop="2vh">
               <Image
                 rounded="full"
                 size="150px"
@@ -94,7 +95,6 @@ export default function CardProfile({ user, history, white, width, height }) {
                 onClick={onOpen}
                 w="10vw"
                 color="white"
-                variantColor="c2"
                 backgroundColor="c2.100"
                 >
                 Editar informacion
@@ -140,7 +140,6 @@ export default function CardProfile({ user, history, white, width, height }) {
                 <ModalFooter>
                   <Button 
                     color="white"
-                    variantColor="c2"
                     backgroundColor="c2.100" 
                     mr={3}
                     onClick={context.handleUpdateUserSubmit}>

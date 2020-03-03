@@ -94,7 +94,7 @@ function Services ({ history }) {
 
                   <Button
                     backgroundColor="c2.100"
-                    variantColor="bttn"
+                    color="white"
                     mt="1vh"
                     onClick={() => go(`/services/${e.link}`)}
                   >
@@ -115,13 +115,6 @@ function Services ({ history }) {
 
     
       <Stack alignItems="center">
-        <Button
-          backgroundColor="c2.100"
-          variantColor="bttn"
-          onClick={() => go("/signup")}
-        >
-          Comience ahora!
-        </Button>
       </Stack>
       <br></br>
       <Stack spacing={3}>

@@ -39,7 +39,7 @@ function Navbar({ history }) {
                 as={IconButton}
                 variant="outline"
                 backgroundColor="white"
-                variantColor="whity"
+                variantColor="c5"
                 aria-label="Menu"
                 size="lg"
                 icon="menu"

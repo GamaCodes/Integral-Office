@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import {
   Flex,
   FormControl,
@@ -6,11 +6,14 @@ import {
   Input,
   useToast
 } from '@chakra-ui/core'
-import { MyContext } from '../../context'
-import Form from '../../components/Form'
+import { MyContext } from '../../../context'
+import Form from '../../../components/Form'
 export default function Supplies({ history }) {
-  const toast = useToast()
   const context = useContext(MyContext)
+  useEffect(() => {
+    if (!context.state.isLogged) return history.push('/login')
+  })
+  const toast = useToast()
   const submit = e => {
     context
       .handleSignupSubmit(e)
@@ -41,7 +44,7 @@ export default function Supplies({ history }) {
           <Flex
             backgroundColor="c1.100"
             w="100vw"
-            h="90vh"
+            h="180vh"
             align="center"
             justify="center"
           >
@@ -61,9 +64,9 @@ export default function Supplies({ history }) {
                 <InputGroup>
                   <Input
                     placeholder="Tipo de materia prima"
-                    name="codigo"
+                    name="tipo"
                     type="text"
-                    value={context.state.formSignup.codigo}
+                    value={context.state.formSignup.tipo}
                     onChange={context.handleSignupInput}
                   />
                 </InputGroup>

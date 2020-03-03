@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import {
   Flex,
   FormControl,
@@ -9,8 +9,11 @@ import {
 import { MyContext } from '../../../context'
 import Form from '../../../components/Form'
 export default function Signup({ history }) {
-  const toast = useToast()
   const context = useContext(MyContext)
+  useEffect(() => {
+    if (!context.state.isLogged) return history.push('/login')
+  })
+  const toast = useToast()
   const submit = e => {
     context
       .handleSignupSubmit(e)

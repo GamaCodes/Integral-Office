@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Button } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Button, Flex } from "@chakra-ui/core";
 
 function Inventory ({ history }) {
   const context = useContext(MyContext)
@@ -24,30 +24,36 @@ function Inventory ({ history }) {
           alt="IntegralOffice"
         />
       </Stack>
-      <Button
-          backgroundColor="c2.100"
-          variantColor="bttn"
-          w="10vw"
-          onClick={() => go("/services")}
-        >
-          + Agregar Insumo
-        </Button>
+      <Flex justify="center">
         <Button
-          backgroundColor="c2.100"
-          variantColor="bttn"
-          w="10vw"
-          onClick={() => go("/services/inventory/property")}
-        >
-         + Agregar Producto
-        </Button>
-        <Button
-          backgroundColor="c2.100"
-          variantColor="bttn"
-          w="10vw"
-          onClick={() => go("/signup")}
-        >
-          + Aumentar Stock
-        </Button>
+            backgroundColor="c2.100"
+            color="white"
+            w="10vw"
+            onClick={() => go("/services/inventory/supplies")}
+          >
+            + Agregar Insumo
+          </Button>
+        </Flex>
+        <Flex justify="center">
+          <Button
+            backgroundColor="c2.100"
+            color="white"
+            w="10vw"
+            onClick={() => go("/services/inventory/property")}
+          >
+          + Agregar Producto
+          </Button>
+        </Flex>
+        <Flex justify="center">
+          <Button
+            backgroundColor="c2.100"
+            color="white"
+            w="10vw"
+            onClick={() => go("/signup")}
+          >
+            + Aumentar Stock
+          </Button>
+        </Flex>
       <Stack backgroundColor="white">
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
