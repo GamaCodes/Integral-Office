@@ -34,16 +34,33 @@ router.get('/profile', isAuth, (req, res, next) => {
     .catch((err) => res.status(500).json({ err }));
 });
 
+router.get('/', (req, res, next) => {
+  res.status(200).json({ msg: 'Working' });
+});
+
+router.get('/services', isAuth, (req, res, next) => {
+  res.status(200).json({ msg: 'Working' });
+});
+
+
+router.post('/update', isAuth, async (req, res, next) => {
+  const { name, email, phone, address, purpose } = req.body
+  console.log(name, email, phone, address, purpose)
+  const user = await User.findByIdAndUpdate(
+    req.user._id,
+  )
+}) 
+
 //Upload Routes/auths linea 43
 router.post(
   '/upload',
   isAuth,
-  uploadCloud.single('imageURL'),
+  uploadCloud.single('imgURL'),
   async (req, res, next) => {
     const { secure_url } = req.file
     const user = await User.findByIdAndUpdate(
       req.user._id,
-      { photoURL: secure_url },
+      { imgURL: secure_url },
       { new: true }
     )
     res.status(200).json({ user })

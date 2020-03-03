@@ -79,11 +79,10 @@ function Home({ width, history }) {
                   alt={e.name}
                 />
                 <Carousel.Caption>
-                <Stack isInline alignItems="center">
-                <Badge variant="solid"  backgroundColor="c4.100" mb={["20vw", '20vw', "55vh"]} >
-                     <Text fontSize="xl" color="c2.100">{e.name}</Text>
-                </Badge>
-                </Stack>
+                  <Badge rounded="full" px="2" variantColor="c3" mb={["22vw", '22vw', "55vh"]}>
+                    <Text fontSize="xl" color="white">{e.name}</Text>
+                  </Badge>
+                  <br/>
                   <Button size="sm" onClick={()=>handleToggle(i)} mt="1rem" backgroundColor="c2.100">
                     Mostrar {show ? "menos" : "mas"}
                   </Button>

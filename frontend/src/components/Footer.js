@@ -48,10 +48,10 @@ function Footer({ history }) {
               <BreadcrumbLink onClick={() => go('/')} color="c1.100" > Inicio</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink onClick={() => go('/')} color="c1.100">Privacidad</BreadcrumbLink>
+              <BreadcrumbLink onClick={() => go('/privacy')} color="c1.100">Privacidad</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink onClick={() => go('/')} color="c1.100">Ayuda</BreadcrumbLink>
+              <BreadcrumbLink onClick={() => go('/help')} color="c1.100">Ayuda</BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
           <Box 
@@ -62,6 +62,7 @@ function Footer({ history }) {
             w="100vw"
             h="5vh"
             justify="center"
+            onClick={() => go('/terms')}
             >
             Terminos y Condiciones
             </Box>

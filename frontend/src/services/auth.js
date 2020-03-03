@@ -21,6 +21,13 @@ const AUTH_SERVICE = {
   LOGOUT: async () => {
     const { data } = await service.get('/logout')
     return data
+  },
+  UPDATE: async form => {
+    const { data } = await service.post('/update', form)
+    return data
+  },
+  UPLOAD: async photo => {
+    return await service.post('/upload', photo)
   }
 }
 export default AUTH_SERVICE

@@ -16,7 +16,7 @@ export default function Login({ history }) {
   const submit = async e => {
     const { user, msg } = await context.handleLoginSubmit(e)
     if (user) {
-      history.push('/profile')
+      history.push('/services')
     } else {
       toast({
         title: 'Verifica tus credenciales',

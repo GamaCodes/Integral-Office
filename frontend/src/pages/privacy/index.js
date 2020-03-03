@@ -1,12 +1,7 @@
-import React, { useEffect, useContext } from 'react'
-import { MyContext } from '../../../context'
-import { Stack } from "@chakra-ui/core";
+import React from "react";
+import { Stack, Text } from "@chakra-ui/core";
 
-function Inventory ({ history }) {
-  const context = useContext(MyContext)
-  useEffect(() => {
-    if (!context.state.isLogged) return history.push('/login')
-  })
+function Accounting ({ history }) {
   // const go = path => history.push(path);
   return (
     <Stack
@@ -20,11 +15,14 @@ function Inventory ({ history }) {
       <Stack alignItems="center" marginLeft={["17vw", '10vw', '38vw']} w={["50vw", '50vw', '20vw']}>
         <img
           className="d-block w-100"
-          src="../inventory.png"
+          src="../NameIO.png"
           alt="IntegralOffice"
         />
+        <Text>
+            Privacidad
+        </Text>
       </Stack>
     </Stack>
   )}
 
-export default Inventory;
+export default Accounting;

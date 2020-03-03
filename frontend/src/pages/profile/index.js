@@ -16,7 +16,7 @@ export default function CardProfile({ history }) {
         if (isLogged)
           return (
             <Flex
-              backgroundColor="c1.100"
+            backgroundColor="c1.100"
             w="100vw"
             h="90vh"
             align="center"

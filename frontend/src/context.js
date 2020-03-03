@@ -14,6 +14,14 @@ class MyProvider extends Component {
       purpose: '',  
       password: ''
     },
+    formUpdate: {
+      name: '',
+      email: '',
+      adress: '',
+      phone: '', 
+      purpose: '',  
+      password: ''
+    },
     formLogin: {
       email: '',
       password: ''
@@ -40,6 +48,18 @@ class MyProvider extends Component {
     formSignup[name] = value
     this.setState({ formSignup })
   }
+
+  handleUpdateInput = e => {
+    const a = this.state['formUpdate']
+    const key = e.target.name
+    a[key] = e.target.value
+    this.setState({ formUpdate: a })
+    // const { formUpdate } = this.state
+    // const { name, value } = e.target
+    // formUpdate[name] = value
+    // this.setState({ formUpdate })
+    console.log('lel')
+  }
   //Esta función destructura de el estado la form para poder acceder a
   //a sus key value pairs.
   //Destructuramos la key y su valor de element y con . target lo 
@@ -64,6 +84,32 @@ class MyProvider extends Component {
     return await AUTH_SERVICE.SIGNUP(form)
   }
 
+  handleUpdateSubmit = async e => {
+    e.preventDefault()
+    const form = this.state.formUpdate
+    console.log(this.state.formUpdate)
+    let newForm = await AUTH_SERVICE.UPDATE(form)
+    this.setState({ formUpdate: { name: '', email: '', adress: '', phone: '', purpose:'', password: '' } })
+    return newForm
+  }
+
+  handleUpdateUser = e=> {
+    const {name, value} = e.target
+      this.setState(prev => ({
+        ...prev,
+        loggedUser: {
+            ...prev.loggedUser,
+            [name]:value
+        }
+      }))
+  }
+
+  handleUpdateUserSubmit = async ()=> {
+    console.log(this.state.loggedUser)
+    await AUTH_SERVICE.UPDATE(this.state.loggedUser)
+    alert('ok')
+  }
+
   handleLoginSubmit = e => {
     e.preventDefault()
     const form = this.state.formLogin
@@ -85,6 +131,8 @@ class MyProvider extends Component {
       })
       .finally(() => this.setState({ formLogin: { email: '', password: '' } }))
   }
+
+  // UPLOAD = e 
   render() {
     const {
       state,
@@ -92,7 +140,9 @@ class MyProvider extends Component {
       handleSignupSubmit,
       handleLoginInput,
       handleLoginSubmit,
-      handleLogout
+      handleLogout,
+      handleUpdateUser,
+      handleUpdateUserSubmit
     } = this
     return (
       <MyContext.Provider
@@ -102,7 +152,9 @@ class MyProvider extends Component {
           handleSignupSubmit,
           handleLoginInput,
           handleLoginSubmit,
-          handleLogout
+          handleLogout,
+          handleUpdateUser,
+          handleUpdateUserSubmit
         }}
       >
         {this.props.children}

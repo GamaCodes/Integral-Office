@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
 import { Stack } from "@chakra-ui/core";
 
-function Inventory ({ history }) {
+function Quotation ({ history }) {
   const context = useContext(MyContext)
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
@@ -20,11 +20,11 @@ function Inventory ({ history }) {
       <Stack alignItems="center" marginLeft={["17vw", '10vw', '38vw']} w={["50vw", '50vw', '20vw']}>
         <img
           className="d-block w-100"
-          src="../inventory.png"
+          src="../quotation.png"
           alt="IntegralOffice"
         />
       </Stack>
     </Stack>
   )}
 
-export default Inventory;
+export default Quotation;
