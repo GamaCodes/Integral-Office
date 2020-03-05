@@ -121,7 +121,7 @@ function Finance ({ history }) {
           <Flex justify="center" w="50vw">
             <img
               className="d-block w-100"
-              src="http://www.itsm-tlapa.edu.mx/master/images/Blog/construccion.jpg"
+              src="/construccion.jpg"
               alt="En mantenimiento"
               justify="center"
             />
