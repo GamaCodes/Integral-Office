@@ -2,11 +2,12 @@ import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
 import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Button, Flex, Icon } from "@chakra-ui/core";
 import { Table } from 'react-bootstrap';
+import INTEGRAL_SERVICE from '../../../services/index'
 
 function Inventory ({ history }) {
   const context = useContext(MyContext)
   const deleteSupplie = async (e,id)=>{
-    await context.DELETESUPPLIE(e,id)
+    await INTEGRAL_SERVICE.DELETESUPPLIE(e,id)
   } 
   
   const updateSupplie = async(e,supplie)=>{
@@ -75,7 +76,7 @@ function Inventory ({ history }) {
                     <td>{supplie.precioUnit}</td>
                     <td><Icon name="view" onClick={(e)=>{} }/></td>
                     <td><Icon name="edit" onClick={(e)=>{updateSupplie(e,supplie._id)} }/></td>
-                    <td><Icon name="delete" onClick={(e)=>{deleteSupplie(e,supplie._id)} }/></td>
+                    <td><Icon name="delete" onClick={(e)=>context.deleteSupplie(e,supplie._id) }/></td>
                   </tr>
                 </tbody>
                 ))}

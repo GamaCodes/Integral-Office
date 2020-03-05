@@ -90,6 +90,12 @@ class MyProvider extends Component {
     isLogged: false
   }
 
+  deleteSupplie = async (e,id) => {
+    e.preventDefault()
+    console.log('hola')
+    await INTEGRAL_SERVICE.DELETESUPPLIE(id)
+  }
+
   handleLogout = async () => {
     await INTEGRAL_SERVICE.LOGOUT()
     this.props.history.push('/')
@@ -417,7 +423,8 @@ class MyProvider extends Component {
       handleUpdateProductInput,
       handleUpdateProductSubmit,
       handleDeleteProductSubmit,
-      getSupplies
+      getSupplies,
+      deleteSupplie
     } = this
     return (
       <MyContext.Provider
@@ -441,7 +448,8 @@ class MyProvider extends Component {
           handleUpdateProductInput,
           handleUpdateProductSubmit,
           handleDeleteProductSubmit,
-          getSupplies
+          getSupplies,
+          deleteSupplie
         }}
       >
         {this.props.children}
