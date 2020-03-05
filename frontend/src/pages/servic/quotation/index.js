@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Flex } from "@chakra-ui/core";
 
 function Quotation ({ history }) {
   const context = useContext(MyContext)
@@ -32,15 +32,36 @@ function Quotation ({ history }) {
           <Tab>Cotizacion para cliente</Tab>
         </TabList>
         <TabPanels>
-          <TabPanel>
-            <p>one!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>two!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>tree!</p>
-          </TabPanel>
+        <TabPanel>
+          <Flex justify="center" w="50vw">
+            <img
+              className="d-block w-100"
+              src="http://www.itsm-tlapa.edu.mx/master/images/Blog/construccion.jpg"
+              alt="En mantenimiento"
+              justify="center"
+            />
+          </Flex>
+        </TabPanel>
+        <TabPanel>
+          <Flex justify="center" w="50vw">
+            <img
+              className="d-block w-100"
+              src="http://www.itsm-tlapa.edu.mx/master/images/Blog/construccion.jpg"
+              alt="En mantenimiento"
+              justify="center"
+            />
+          </Flex>
+        </TabPanel>
+        <TabPanel>
+          <Flex justify="center" w="50vw">
+            <img
+              className="d-block w-100"
+              src="http://www.itsm-tlapa.edu.mx/master/images/Blog/construccion.jpg"
+              alt="En mantenimiento"
+              justify="center"
+            />
+          </Flex>
+        </TabPanel>
         </TabPanels>
       </Tabs>
       </Stack>

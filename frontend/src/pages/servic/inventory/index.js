@@ -8,6 +8,7 @@ function Inventory ({ history }) {
   const deleteSupplie = async (e,id)=>{
     await context.DELETESUPPLIE(e,id)
   } 
+  
   const updateSupplie = async(e,supplie)=>{
     await context.UPDATESUPPLIE(e,supplie)
   }
@@ -66,7 +67,7 @@ function Inventory ({ history }) {
                   </tr>
                 </thead>
                 {context.state.supplies.map((supplie, id) => (
-                <tbody>
+                <tbody key={id} >
                   <tr>
                     <td>{supplie.tipo}</td>
                     <td>{supplie.descripcion}</td>
@@ -74,7 +75,7 @@ function Inventory ({ history }) {
                     <td>{supplie.precioUnit}</td>
                     <td><Icon name="view" onClick={(e)=>{} }/></td>
                     <td><Icon name="edit" onClick={(e)=>{updateSupplie(e,supplie._id)} }/></td>
-                    <td><Icon name="delete" onClick={(e)=>{deleteSupplie(e,supplie._id)}}/></td>
+                    <td><Icon name="delete" onClick={(e)=>{deleteSupplie(e,supplie._id)} }/></td>
                   </tr>
                 </tbody>
                 ))}
@@ -86,7 +87,7 @@ function Inventory ({ history }) {
               <Button
                 backgroundColor="c2.100"
                 color="white"
-                w="10vw"
+                w="12vw"
                 onClick={() => go("/services/inventory/products")}
               >
               + Agregar Producto
@@ -122,7 +123,7 @@ function Inventory ({ history }) {
               <Button
                 backgroundColor="c2.100"
                 color="white"
-                w="10vw"
+                w="11vw"
                 onClick={() => go("/signup")}
               >
                 + Aumentar Stock
@@ -133,19 +134,25 @@ function Inventory ({ history }) {
                   <thead>
                     <tr>
                       <th>Tipo</th>
+                      <th>Codigo</th>
                       <th>Descripcion</th>
                       <th>Stock Disponible</th>
                       <th>Stock Minimo</th>
+                      <th>Stock Minimo</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  {context.state.supplies.map((supplie, id) => (
+                  <tbody key={id}>
                     <tr>
-                      <td>1</td>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
+                      <td>{supplie.tipo}</td>
+                      <td>{supplie.codigo}</td>
+                      <td>{supplie.descripcion}</td>
+                      <td>{supplie.cantAlmacen}</td>
+                      <td>{supplie.cantMinima}</td>
+                      <td><Icon name="add" onClick={(e)=>{deleteSupplie(e,supplie._id)}}/></td>
                     </tr>
                   </tbody>
+                  ))}
                 </Table>
               </Stack>
           </TabPanel>

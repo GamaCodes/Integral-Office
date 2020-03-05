@@ -76,8 +76,8 @@ function Home({ width, history }) {
             fontWeight="semibold"
             color="white"
           >
-            <Text fontSize="3xl">Somos tu aliado en automatizacion de procesos</Text>
-            <Text fontSize="3xl"> administrativos para cada sector de tu empresa.</Text>
+            <Text fontSize={["xl", "2xl", "3xl"]}>Somos tu aliado en automatizacion de procesos</Text>
+            <Text fontSize={["xl", "2xl", "3xl"]}> administrativos para cada sector de tu empresa.</Text>
         </Box>
 
       </Flex>
@@ -93,7 +93,7 @@ function Home({ width, history }) {
                   alt={e.name}
                 />
                 <Carousel.Caption>
-                  <Badge rounded="full" px="2" variantColor="c3" mb={["22vw", '22vw', "60vh"]}>
+                  <Badge rounded="full" px="2" variantColor="c3" mb={["30vw", '45vw', "60vh"]}>
                     <Text fontSize="xl" color="white">{e.name}</Text>
                   </Badge>
                 </Carousel.Caption>
@@ -141,6 +141,8 @@ function Home({ width, history }) {
                   <li>Integración de las distintas bases de datos de una compañía en un solo programa.</li>
                   <br></br>
                   <li>Ahorro de tiempo y costes.</li>
+                  <br></br>
+                  <li>Exportamos tu base de datos de excel</li>
                 </ul>
               </Box>
             </Box>

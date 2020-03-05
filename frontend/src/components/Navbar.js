@@ -34,7 +34,7 @@ function Navbar({ history }) {
               alt="IntegralOffice"
             />
             </Text>
-            <Text w={["50vw", '30vw', '20vw']}>
+            <Text w={["35vw", '30vw', '10vw']} marginRight={["30vw", "50vw", "78vw"]}>
             <img
               className="d-block w-100"
               src="../name.png"

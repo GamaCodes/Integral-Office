@@ -1,13 +1,14 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Flex, Button, Icon } from "@chakra-ui/core";
+import { Table } from 'react-bootstrap';
 
 function Purchases ({ history }) {
   const context = useContext(MyContext)
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
   })
-  // const go = path => history.push(path);
+  const go = path => history.push(path);
   return (
     <Stack
       minH="90vh"
@@ -33,13 +34,119 @@ function Purchases ({ history }) {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <p>one!</p>
+          <Flex justify="center">
+            <Button
+              backgroundColor="c2.100"
+              color="white"
+              w="15vw"
+              onClick={() => go("/services/accounting/bills")} 
+            >
+            + Compra de Insumo
+            </Button>
+          </Flex>
+          <Stack m={3}>
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Concepto</th>
+                  <th>Descripcion</th>
+                  <th>Monto</th>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>27/02/20</td>
+                  <td>Officinas</td>
+                  <td>Compra de productos de papeleria</td>
+                  <td>600</td>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </tbody>
+            </Table>
+          </Stack>
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+          <Flex justify="center">
+            <Button
+              backgroundColor="c2.100"
+              color="white"
+              w="15vw"
+              onClick={() => go("/services/accounting/bills")} 
+            >
+            + Pago de Nomina
+            </Button>
+          </Flex>
+          <Stack m={3}>
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Puesto</th>
+                  <th>Nombre</th>
+                  <th>Monto</th>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1/03/20</td>
+                  <td>Contadora</td>
+                  <td>Maria del Carmen Alvarez Romo</td>
+                  <td>7500</td>
+
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </tbody>
+            </Table>
+          </Stack>
           </TabPanel>
           <TabPanel>
-            <p>tree!</p>
+          <Flex justify="center">
+            <Button
+              backgroundColor="c2.100"
+              color="white"
+              w="12vw"
+              onClick={() => go("/services/accounting/bills")} 
+            >
+            + Pago de Servicios
+            </Button>
+          </Flex>
+          <Stack m={3}>
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Servicio</th>
+                  <th>Descripcion</th>
+                  <th>Monto</th>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1/03/20</td>
+                  <td>Luz</td>
+                  <td>Pago de luz primer bimestre</td>
+                  <td>600</td>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </tbody>
+            </Table>
+          </Stack>
           </TabPanel>
         </TabPanels>
       </Tabs>

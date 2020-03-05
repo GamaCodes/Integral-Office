@@ -5,7 +5,8 @@ import {
   InputGroup,
   Input,
   useToast,
-  Button
+  Button,
+  Select
 } from '@chakra-ui/core'
 import { MyContext } from '../../../context'
 import Form from '../../../components/Form'
@@ -64,15 +65,28 @@ export default function Supplies({ history }) {
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
-                <InputGroup>
-                  <Input
-                    placeholder="Tipo de materia prima"
-                    name="tipo"
-                    type="text"
-                    value={context.state.formSupplie.tipo}
-                    onChange={context.handleSupplieInput}
-                  />
-                </InputGroup>
+                <Select 
+                  onChange={context.handleSupplieInput}
+                  placeholder="Selecciona el tipo de insumo"
+                  name="tipo">
+                  <option value="Cable">Cable</option>
+                  <option value="Terminal">Terminal</option>
+                  <option value="Conector">Conector</option>
+                  <option value="Clavija">Clavija</option>
+                  <option value="Tomacorriente">Tomacorriente</option>
+                  <option value="Cinta">Cinta</option>
+                  <option value=""></option>
+                  <option value="Etiqueta">Etiqueta</option>
+                  <option value="Plastico">Plastico</option>
+                  <option value="Protector">Protector</option>
+                  <option value="Cintillo">Cintillo</option>
+                  <option value="Bolsa">Bolsa</option>
+                  <option value="Sensor">Sensor</option>
+                  <option value="Funda">Funda</option>
+                  <option value="Arrancador">Arrancador</option>
+                  <option value="Fusible">Fusible</option>
+                  <option value="Sello">Sello</option>
+                </Select>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
@@ -108,15 +122,18 @@ export default function Supplies({ history }) {
                 </InputGroup>
               </FormControl>
               <FormControl>
-                <InputGroup>
-                  <Input
-                    placeholder="Unidad de Medida"
-                    name="unidadMed"
-                    type="text"
-                    value={context.state.formSupplie.unidadMed}
-                    onChange={context.handleSupplieInput}
-                  />
-                </InputGroup>
+                <Select 
+                  onChange={context.handleSupplieInput}
+                  placeholder="Unidad de Medida"
+                  name="unidadMed">
+                  <option value="Gramos">Gramos</option>
+                  <option value="Kilos">Kilos</option>
+                  <option value="Litros">Litros</option>
+                  <option value="Metros">Metros</option>
+                  <option value="Pieza">Pieza</option>
+                  <option value="Piezas">Piezas</option>
+                  <option value="Otro">Otro</option>
+                </Select>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
@@ -130,26 +147,22 @@ export default function Supplies({ history }) {
                 </InputGroup>
               </FormControl>
               <FormControl>
-                <InputGroup>
-                  <Input
-                    placeholder="Actividad comercial"
-                    name="actComer"
-                    type="text"
-                    value={context.state.formSupplie.actComer}
-                    onChange={context.handleSupplieInput}
-                  />
-                </InputGroup>
+                <Select 
+                  onChange={context.handleSupplieInput}
+                  placeholder="Actividad comercial"
+                  name="actComer">
+                  <option value="Nacional">Nacional</option>
+                  <option value="Importado">Importado</option>
+                </Select>
               </FormControl>
               <FormControl isRequired>
-                <InputGroup>
-                  <Input
-                    placeholder="Tipo de moneda"
-                    name="moneda"
-                    type="text"
-                    value={context.state.formSupplie.moneda}
-                    onChange={context.handleSupplieInput}
-                  />
-                </InputGroup>
+                <Select 
+                  onChange={context.handleSupplieInput}
+                  placeholder="Tipo de moneda"
+                  name="moneda">
+                  <option value="MXN">MXN</option>
+                  <option value="DLLS">DLLS</option>
+                </Select>
               </FormControl>
               <FormControl>
                 <InputGroup>
@@ -161,6 +174,14 @@ export default function Supplies({ history }) {
                     onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
+
+                <Select 
+                  onChange={context.handleSupplieInput}
+                  placeholder="Gastos de importacion"
+                  name="gastosImp">
+                  <option value="SI">Si</option>
+                  <option value="NO">No</option>
+                </Select>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
