@@ -127,7 +127,7 @@ function Inventory ({ history }) {
                 w="11vw"
                 onClick={() => go("/services/inventory/order")}
               >
-                + Aumentar Stock
+                Crear Orden
               </Button>
             </Flex>
             <Stack m={3}>
