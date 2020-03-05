@@ -92,7 +92,6 @@ class MyProvider extends Component {
 
   deleteSupplie = async (e,id) => {
     e.preventDefault()
-    console.log('hola')
     await INTEGRAL_SERVICE.DELETESUPPLIE(id)
   }
 

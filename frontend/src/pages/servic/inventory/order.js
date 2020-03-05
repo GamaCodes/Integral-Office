@@ -28,7 +28,7 @@ export default function Signup({ history }) {
           duration: 9000,
           isClosable: true
         })
-        history.push('services/inventory')
+        history.push('/services/inventory')
       })
       .catch(err => {
         toast({
@@ -51,11 +51,11 @@ export default function Signup({ history }) {
             align="center"
             justify="center"
           >
-            <Form submit={submit} bgColor="white" title="Agregar Producto">
+            <Form submit={submit} bgColor="white" title="Ingregar Orden">
               <FormControl isRequired>
                 <InputGroup>
                   <Input
-                    placeholder="Nombre"
+                    placeholder="Insumo"
                     name="name"
                     type="text"
                     value={context.state.formProduct.name}
@@ -66,7 +66,7 @@ export default function Signup({ history }) {
               <FormControl isRequired>
                 <InputGroup>
                   <Input
-                    placeholder="Insumos"
+                    placeholder="Cantidad Requerida"
                     name="direction"
                     type="text"
                     value={context.state.formProduct.direction}
@@ -76,19 +76,7 @@ export default function Signup({ history }) {
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
-                  <Input
-                    placeholder="descripcion"
-                    name="descripcion"
-                    type="text"
-                    value={context.state.formProduct.descripcion}
-                    onChange={context.handleProductInput}
-                  />
-                </InputGroup>
-              </FormControl>
-              <FormControl isRequired>
-                <InputGroup>
-                  <Input placeholder="Plano de producto"/>
-                  <Input  placeholder="descripcion"w="25vw" type="file" name="blueprint" onChange={context.uploadPhoto} />
+                  <Input placeholder="Fecha"/>
                 </InputGroup>
               </FormControl>
               <Button

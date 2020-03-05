@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
-const Property = require('../models/Property')
+// const Property = require('../models/Property')
 // Require 3do modelo
 const passport = require('../config/passport');
 const uploadCloud = require('../config/cloudinary')

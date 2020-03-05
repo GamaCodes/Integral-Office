@@ -125,7 +125,7 @@ function Inventory ({ history }) {
                 backgroundColor="c2.100"
                 color="white"
                 w="11vw"
-                onClick={() => go("/signup")}
+                onClick={() => go("/services/inventory/order")}
               >
                 + Aumentar Stock
               </Button>
@@ -139,7 +139,8 @@ function Inventory ({ history }) {
                       <th>Descripcion</th>
                       <th>Stock Disponible</th>
                       <th>Stock Minimo</th>
-                      <th>Stock Minimo</th>
+                      <th>Diferencia</th>
+                      <th>Pedido</th>
                     </tr>
                   </thead>
                   {context.state.supplies.map((supplie, id) => (
@@ -150,6 +151,7 @@ function Inventory ({ history }) {
                       <td>{supplie.descripcion}</td>
                       <td>{supplie.cantAlmacen}</td>
                       <td>{supplie.cantMinima}</td>
+                      <td>{supplie.cantAlmacen-supplie.cantMinima}</td>
                       <td><Icon name="add" onClick={(e)=>{deleteSupplie(e,supplie._id)}}/></td>
                     </tr>
                   </tbody>
