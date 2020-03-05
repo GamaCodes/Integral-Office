@@ -34,6 +34,13 @@ function Navbar({ history }) {
               alt="IntegralOffice"
             />
             </Text>
+            <Text w={["50vw", '30vw', '20vw']}>
+            <img
+              className="d-block w-100"
+              src="../name.png"
+              alt="IntegralOffice"
+            />
+            </Text>
             <Menu >
               <MenuButton
                 as={IconButton}

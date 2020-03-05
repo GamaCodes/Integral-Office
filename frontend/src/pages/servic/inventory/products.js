@@ -4,23 +4,26 @@ import {
   FormControl,
   InputGroup,
   Input,
-  useToast
+  useToast,
+  Button
 } from '@chakra-ui/core'
 import { MyContext } from '../../../context'
 import Form from '../../../components/Form'
+
 export default function Signup({ history }) {
   const context = useContext(MyContext)
+  const go = path => history.push(path);
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
   })
   const toast = useToast()
   const submit = e => {
     context
-      .handleSignupSubmit(e)
+      .handleProductSubmit(e)
       .then(response => {
         toast({
-          title: 'La propiedad ha sido creada.',
-          description: "La propiedad se ha creado satisfactoriamente",
+          title: 'Producto creado.',
+          description: "El producto ha sido creado satisfactoriamente",
           status: 'success',
           duration: 9000,
           isClosable: true
@@ -30,7 +33,7 @@ export default function Signup({ history }) {
       .catch(err => {
         toast({
           title: 'Algo salio muy mal',
-          description: 'No se pudo crear tu propiedad',
+          description: 'No se pudo crear tu producto',
           status: 'error',
           duration: 9000,
           isClosable: true
@@ -52,22 +55,22 @@ export default function Signup({ history }) {
               <FormControl isRequired>
                 <InputGroup>
                   <Input
-                    placeholder="Imagen"
-                    name="imageURL"
+                    placeholder="Nombre"
+                    name="name"
                     type="text"
-                    value={context.state.formSignup.imageURL}
-                    onChange={context.handleSignupInput}
+                    value={context.state.formProduct.name}
+                    onChange={context.handleProductInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
                   <Input
-                    placeholder="direction"
+                    placeholder="Insumos"
                     name="direction"
                     type="text"
-                    value={context.state.formSignup.direction}
-                    onChange={context.handleSignupInput}
+                    value={context.state.formProduct.direction}
+                    onChange={context.handleProductInput}
                   />
                 </InputGroup>
               </FormControl>
@@ -75,24 +78,29 @@ export default function Signup({ history }) {
                 <InputGroup>
                   <Input
                     placeholder="descripcion"
-                    name="description"
-                    type="number"
-                    value={context.state.formSignup.description}
-                    onChange={context.handleSignupInput}
+                    name="descripcion"
+                    type="text"
+                    value={context.state.formProduct.descripcion}
+                    onChange={context.handleProductInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
-                  <Input
-                    placeholder="price"
-                    name="price"
-                    type="number"
-                    value={context.state.formSignup.price}
-                    onChange={context.handleSignupInput}
-                  />
+                  <Input placeholder="Plano de producto"/>
+                  <Input  placeholder="descripcion"w="25vw" type="file" name="blueprint" onChange={context.uploadPhoto} />
                 </InputGroup>
               </FormControl>
+              <Button
+              backgroundColor="c2.100"
+              color="white"
+              type="submit"
+              w={["30vw", '20vw', '10vw']}
+              justify="center"
+              onClick={() => go("/services/inventory")}
+            >
+              Salir
+            </Button>
             </Form>
           </Flex>
         )

@@ -48,8 +48,13 @@ app.use(logger('dev'));
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const supplie = require('./routes/supplie');
+const product = require('./routes/product');
 app.use('/', index);
 app.use('/', auth);
+app.use('/supplie', supplie);
+app.use('/product', product);
+
 
 // Uncomment this line for production o si no entendiste antes de deployar
 // app.get('/*', (req, res) => res.sendFile(__dirname + '/public/index.html'));

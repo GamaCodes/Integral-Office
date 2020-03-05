@@ -1,11 +1,20 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Button, Flex } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Button, Flex, Icon } from "@chakra-ui/core";
+import { Table } from 'react-bootstrap';
 
 function Inventory ({ history }) {
   const context = useContext(MyContext)
+  const deleteSupplie = async (e,id)=>{
+    await context.DELETESUPPLIE(e,id)
+  } 
+  const updateSupplie = async(e,supplie)=>{
+    await context.UPDATESUPPLIE(e,supplie)
+  }
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
+    context.getSupplies()
+
   })
   const go = path => history.push(path);
   return (
@@ -24,36 +33,6 @@ function Inventory ({ history }) {
           alt="IntegralOffice"
         />
       </Stack>
-      <Flex justify="center">
-        <Button
-            backgroundColor="c2.100"
-            color="white"
-            w="10vw"
-            onClick={() => go("/services/inventory/supplies")}
-          >
-            + Agregar Insumo
-          </Button>
-        </Flex>
-        <Flex justify="center">
-          <Button
-            backgroundColor="c2.100"
-            color="white"
-            w="10vw"
-            onClick={() => go("/services/inventory/property")}
-          >
-          + Agregar Producto
-          </Button>
-        </Flex>
-        <Flex justify="center">
-          <Button
-            backgroundColor="c2.100"
-            color="white"
-            w="10vw"
-            onClick={() => go("/signup")}
-          >
-            + Aumentar Stock
-          </Button>
-        </Flex>
       <Stack backgroundColor="white">
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
@@ -63,13 +42,112 @@ function Inventory ({ history }) {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <p>one!</p>
+            <Flex justify="center">
+              <Button
+                  backgroundColor="c2.100"
+                  color="white"
+                  w="10vw"
+                  onClick={() => go("/services/inventory/supplies")}
+                >
+                  + Agregar Insumo
+              </Button>
+            </Flex>
+          <Stack m={3}>
+              <Table striped bordered hover variant="dark">
+                <thead>
+                  <tr>
+                    <th>Tipo</th>
+                    <th>Descripcion</th>
+                    <th>Proveedor</th>
+                    <th>Precio</th>
+                    <th><Icon name="view"/></th>
+                    <th><Icon name="edit"/></th>
+                    <th><Icon name="delete"/></th>
+                  </tr>
+                </thead>
+                {context.state.supplies.map((supplie, id) => (
+                <tbody>
+                  <tr>
+                    <td>{supplie.tipo}</td>
+                    <td>{supplie.descripcion}</td>
+                    <td>{supplie.proveedor}</td>
+                    <td>{supplie.precioUnit}</td>
+                    <td><Icon name="view" onClick={(e)=>{} }/></td>
+                    <td><Icon name="edit" onClick={(e)=>{updateSupplie(e,supplie._id)} }/></td>
+                    <td><Icon name="delete" onClick={(e)=>{deleteSupplie(e,supplie._id)}}/></td>
+                  </tr>
+                </tbody>
+                ))}
+              </Table>
+            </Stack>
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <Flex justify="center">
+              <Button
+                backgroundColor="c2.100"
+                color="white"
+                w="10vw"
+                onClick={() => go("/services/inventory/products")}
+              >
+              + Agregar Producto
+              </Button>
+            </Flex>
+            <Stack m={3}>
+                <Table striped bordered hover variant="dark">
+                  <thead>
+                    <tr>
+                      <th>Producto</th>
+                      <th>Descripcion</th>
+                      <th>Precio</th>
+                      <th><Icon name="view"/></th>
+                      <th><Icon name="edit"/></th>
+                      <th><Icon name="delete"/></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>PRODUCTO</td>
+                      <td>PRODUCTO PRUEBA</td>
+                      <td>10000</td>
+                      <th><Icon name="view"/></th>
+                      <th><Icon name="edit"/></th>
+                      <th><Icon name="delete"/></th>
+                    </tr>
+                  </tbody>
+                </Table>
+              </Stack>
           </TabPanel>
           <TabPanel>
-            <p>tree!</p>
+            <Flex justify="center">
+              <Button
+                backgroundColor="c2.100"
+                color="white"
+                w="10vw"
+                onClick={() => go("/signup")}
+              >
+                + Aumentar Stock
+              </Button>
+            </Flex>
+            <Stack m={3}>
+                <Table striped bordered hover variant="dark">
+                  <thead>
+                    <tr>
+                      <th>Tipo</th>
+                      <th>Descripcion</th>
+                      <th>Stock Disponible</th>
+                      <th>Stock Minimo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </Stack>
           </TabPanel>
         </TabPanels>
       </Tabs>

@@ -1,13 +1,13 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Flex, Button } from "@chakra-ui/core";
 
 function Accounting ({ history }) {
   const context = useContext(MyContext)
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
   })
-  // const go = path => history.push(path);
+  const go = path => history.push(path);
   return (
     <Stack
       minH="90vh"
@@ -27,13 +27,22 @@ function Accounting ({ history }) {
       <Stack backgroundColor="white">
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
-          <Tab>Descarga de Facturas</Tab>
+          <Tab>Facturas</Tab>
           <Tab>Declaraciones</Tab>
           <Tab>Facturacion</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
-            <p>one!</p>
+          <Flex justify="center">
+          <Button
+            backgroundColor="c2.100"
+            color="white"
+            w="10vw"
+            onClick={() => go("/services/accounting/bills")} 
+          >
+          Descargar Facturas
+          </Button>
+        </Flex>
           </TabPanel>
           <TabPanel>
             <p>two!</p>
@@ -45,6 +54,7 @@ function Accounting ({ history }) {
       </Tabs>
       </Stack>
     </Stack>
-  )}
-
+  )
+}
+  
 export default Accounting;

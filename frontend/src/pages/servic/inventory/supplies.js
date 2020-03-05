@@ -4,7 +4,8 @@ import {
   FormControl,
   InputGroup,
   Input,
-  useToast
+  useToast,
+  Button
 } from '@chakra-ui/core'
 import { MyContext } from '../../../context'
 import Form from '../../../components/Form'
@@ -14,9 +15,11 @@ export default function Supplies({ history }) {
     if (!context.state.isLogged) return history.push('/login')
   })
   const toast = useToast()
+  const go = path => history.push(path);
+
   const submit = e => {
     context
-      .handleSignupSubmit(e)
+      .handleSupplieSubmit(e)
       .then(response => {
         toast({
           title: 'Insumo Creado.',
@@ -25,7 +28,7 @@ export default function Supplies({ history }) {
           duration: 9000,
           isClosable: true
         })
-        history.push('/login')
+        history.push('/services/inventory')
       })
       .catch(err => {
         toast({
@@ -44,7 +47,7 @@ export default function Supplies({ history }) {
           <Flex
             backgroundColor="c1.100"
             w="100vw"
-            h="180vh"
+
             align="center"
             justify="center"
           >
@@ -55,8 +58,8 @@ export default function Supplies({ history }) {
                     placeholder="Codigo de Materia prima"
                     name="codigo"
                     type="text"
-                    value={context.state.formSignup.codigo}
-                    onChange={context.handleSignupInput}
+                    value={context.state.formSupplie.codigo}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
@@ -66,8 +69,8 @@ export default function Supplies({ history }) {
                     placeholder="Tipo de materia prima"
                     name="tipo"
                     type="text"
-                    value={context.state.formSignup.tipo}
-                    onChange={context.handleSignupInput}
+                    value={context.state.formSupplie.tipo}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
@@ -77,8 +80,19 @@ export default function Supplies({ history }) {
                     placeholder="Descripcion"
                     name="descripcion"
                     type="text"
-                    value={context.state.formSignup.description}
-                    onChange={context.handleSignupInput}
+                    value={context.state.formSupplie.descripcion}
+                    onChange={context.handleSupplieInput}
+                  />
+                </InputGroup>
+              </FormControl>
+              <FormControl isRequired>
+                <InputGroup>
+                  <Input
+                    placeholder="Proveedor"
+                    name="proveedor"
+                    type="text"
+                    value={context.state.formSupplie.proveedor}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
@@ -88,8 +102,8 @@ export default function Supplies({ history }) {
                     placeholder="Codigo de Proveedor"
                     name="codProv"
                     type="text"
-                    value={context.state.formSignup.codProv}
-                    onChange={context.handleSignupInput}
+                    value={context.state.formSupplie.codProv}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
@@ -99,8 +113,8 @@ export default function Supplies({ history }) {
                     placeholder="Unidad de Medida"
                     name="unidadMed"
                     type="text"
-                    value={context.state.formSignup.unidadMed}
-                    onChange={context.handleSignupInput}
+                    value={context.state.formSupplie.unidadMed}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
@@ -110,114 +124,125 @@ export default function Supplies({ history }) {
                     placeholder="Precio Unitario"
                     name="precioUnit"
                     type="number"
-                    value={context.state.formSignup.precioUnit}
-                    onChange={context.handleSignupInput}
+                    value={context.state.formSupplie.precioUnit}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="Actividad comercial"
                     name="actComer"
                     type="text"
-                    value={context.state.formSignup.actComer}
+                    value={context.state.formSupplie.actComer}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="Tipo de moneda"
                     name="moneda"
                     type="text"
-                    value={context.state.formSignup.moneda}
+                    value={context.state.formSupplie.moneda}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="Gastos de importacion"
                     name="gastosImp"
                     type="text"
-                    value={context.state.formSignup.gastosImp}
+                    value={context.state.formSupplie.gastosImp}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="Cantidad en Almacen"
                     name="cantAlmacen"
                     type="text"
-                    value={context.state.formSignup.cantAlmacen}
+                    value={context.state.formSupplie.cantAlmacen}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="Piezas por empaque"
                     name="modEmpaque"
                     type="text"
-                    value={context.state.formSignup.modEmpaque}
+                    value={context.state.formSupplie.modEmpaque}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="codigo de materia prima (proveedor)"
                     name="codMppProv"
                     type="text"
-                    value={context.state.formSignup.codMppProv}
+                    value={context.state.formSupplie.codMppProv}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl isRequired>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="Cantidad minima en stock"
                     name="cantMinima"
                     type="text"
-                    value={context.state.formSignup.cantMinima}
+                    value={context.state.formSupplie.cantMinima}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="Tiempo de entrega de materia prima"
                     name="tiempoEntrega"
                     type="text"
-                    value={context.state.formSignup.tiempoEntrega}
+                    value={context.state.formSupplie.tiempoEntrega}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl>
                 <InputGroup>
                   <Input
-                    onChange={context.handleSignupInput}
                     placeholder="Periodo a ordenar"
                     name="periodoOrdenar"
                     type="text"
-                    value={context.state.formSignup.periodoOrdenar}
+                    value={context.state.formSupplie.periodoOrdenar}
+                    onChange={context.handleSupplieInput}
                   />
                 </InputGroup>
               </FormControl>
+              <Button
+              backgroundColor="c2.100"
+              color="white"
+              type="submit"
+              w={["30vw", '20vw', '10vw']}
+              justify="center"
+              onClick={() => go("/services/inventory")}
+            >
+              Salir
+            </Button>
             </Form>
           </Flex>
         )
       }}
+      
     </MyContext.Consumer>
   )
 }

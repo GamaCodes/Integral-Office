@@ -8,9 +8,10 @@ import Login from './pages/login'
 import Profile from './pages/profile'
 import Services from './pages/servic'
 import Accounting from './pages/servic/accounting'
+import Bills from './pages/servic/accounting/bills'
 import Finance from './pages/servic/finance'
 import Inventory from './pages/servic/inventory'
-import Property from './pages/servic/inventory/property'
+import Products from './pages/servic/inventory/products'
 import Supplies from './pages/servic/inventory/supplies'
 import Purchases from './pages/servic/purchases'
 import Quotation from './pages/servic/quotation'
@@ -34,9 +35,10 @@ export default () => (
       <Route exact path="/privacy" component={Privacy} /> 
       <Route exact path="/help" component={Help} /> 
       <Route exact path="/services/accounting" component={Accounting} /> 
+      <Route exact path="/services/accounting/bills" component={Bills} /> 
       <Route exact path="/services/finance" component={Finance} /> 
       <Route exact path="/services/inventory" component={Inventory} /> 
-      <Route exact path="/services/inventory/property" component={Property} /> 
+      <Route exact path="/services/inventory/products" component={Products} /> 
       <Route exact path="/services/inventory/supplies" component={Supplies} /> 
       <Route exact path="/services/purchases" component={Purchases} /> 
       <Route exact path="/services/quotation" component={Quotation} /> 

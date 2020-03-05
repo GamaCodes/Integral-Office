@@ -33,7 +33,7 @@ export default function CardProfile({ history }) {
             h="10vh"
             >
               <InputLeftAddon w="10vw" fontWeight="bold"> Editar Logo </InputLeftAddon>
-              <Input w="25vw" type="file" name="imgURL" onChange={context.uploadPhoto} />
+              <Input w="25vw" type="file" name="imgURL" onChange={context.handleUploadPhoto} />
             </Flex>
             </>
           )

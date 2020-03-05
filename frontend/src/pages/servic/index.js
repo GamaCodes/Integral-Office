@@ -28,7 +28,7 @@ const service = [
   {
     name:'Compras',
     src:'https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?cs=srgb&dl=blur-business-coffee-commerce-273222.jpg&fm=jpg',
-    badge:'Ordenes',
+    badge:['Ordenes'],
     link:'purchases'
   },
   {
@@ -68,7 +68,7 @@ function Services ({ history }) {
       <Stack alignItems="center" marginLeft={["17vw", '10vw', '38vw']} w={["50vw", '50vw', '20vw']}>
         <img
           className="d-block w-100"
-          src="../NameIO.png"
+          src="../name.png"
           alt="IntegralOffice"
         />
       </Stack>
@@ -83,6 +83,9 @@ function Services ({ history }) {
           service.map((e, i) => {
             return (
               <Box maxW="sm" borderWidth="1px" rounded="lg" overflow="hidden" backgroundColor="white" key={i}>
+                <Badge rounded="full" px="2" variantColor="c2" mb={3} mt={3}>
+                  <Text fontSize="xl" color="white">{e.name}</Text>
+                </Badge>
                 <Image src={e.src} alt={e.name} />
 
                 <Box p="6">
@@ -95,10 +98,10 @@ function Services ({ history }) {
                   <Button
                     backgroundColor="c2.100"
                     color="white"
-                    mt="1vh"
+                    mt="3vh"
                     onClick={() => go(`/services/${e.link}`)}
                   >
-                    {e.name}
+                    Ir a {e.name}
                   </Button>
                 </Box>
               </Box>
