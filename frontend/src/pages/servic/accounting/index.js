@@ -40,7 +40,6 @@ function Accounting ({ history }) {
               backgroundColor="c2.100"
               color="white"
               w="12vw"
-              onClick={() => go("/services/accounting/bills")} 
             >
             Descargar Facturas
             </Button>
@@ -124,7 +123,6 @@ function Accounting ({ history }) {
               backgroundColor="c2.100"
               color="white"
               w="12vw"
-              onClick={() => go("/services/accounting/bills")} 
             >
             Resumen
             </Button>

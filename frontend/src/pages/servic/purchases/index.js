@@ -8,7 +8,6 @@ function Purchases ({ history }) {
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
   })
-  const go = path => history.push(path);
   return (
     <Stack
       minH="90vh"
@@ -38,8 +37,7 @@ function Purchases ({ history }) {
             <Button
               backgroundColor="c2.100"
               color="white"
-              w="15vw"
-              onClick={() => go("/services/accounting/bills")} 
+              w="15vw" 
             >
             + Compra de Insumo
             </Button>
@@ -77,7 +75,6 @@ function Purchases ({ history }) {
               backgroundColor="c2.100"
               color="white"
               w="15vw"
-              onClick={() => go("/services/accounting/bills")} 
             >
             + Pago de Nomina
             </Button>
@@ -116,7 +113,6 @@ function Purchases ({ history }) {
               backgroundColor="c2.100"
               color="white"
               w="12vw"
-              onClick={() => go("/services/accounting/bills")} 
             >
             + Pago de Servicios
             </Button>
