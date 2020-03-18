@@ -75,7 +75,6 @@ export default function Supplies({ history }) {
                   <option value="Clavija">Clavija</option>
                   <option value="Tomacorriente">Tomacorriente</option>
                   <option value="Cinta">Cinta</option>
-                  <option value=""></option>
                   <option value="Etiqueta">Etiqueta</option>
                   <option value="Plastico">Plastico</option>
                   <option value="Protector">Protector</option>
@@ -164,17 +163,7 @@ export default function Supplies({ history }) {
                   <option value="DLLS">DLLS</option>
                 </Select>
               </FormControl>
-              <FormControl>
-                <InputGroup>
-                  <Input
-                    placeholder="Gastos de importacion"
-                    name="gastosImp"
-                    type="text"
-                    value={context.state.formSupplie.gastosImp}
-                    onChange={context.handleSupplieInput}
-                  />
-                </InputGroup>
-
+              <FormControl>    
                 <Select 
                   onChange={context.handleSupplieInput}
                   placeholder="Gastos de importacion"

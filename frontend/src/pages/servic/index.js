@@ -7,8 +7,8 @@ import { MyContext } from '../../context'
   Box,
   Image,
   Badge,
-  SimpleGrid,
-  Flex
+  Flex,
+  SimpleGrid
 } from "@chakra-ui/core";
 
 

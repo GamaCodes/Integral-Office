@@ -52,7 +52,7 @@ export default function Signup({ history }) {
             <Form submit={submit} bgColor="white" title="Registrate">
               <FormControl isRequired>
                 <InputGroup>
-                  <InputLeftAddon children={<Box as={IoIosBusiness} color="c2.100"/>} />
+                  <InputLeftAddon children={<Box as={IoIosBusiness} color="white"/>} />
                   <Input
                     placeholder="Nombre de la empresa."
                     name="name"
