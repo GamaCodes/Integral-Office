@@ -51,7 +51,18 @@ export default function Signup({ history }) {
             align="center"
             justify="center"
           >
-            <Form submit={submit} bgColor="white" title="Ingregar Orden">
+            <Form submit={submit} bgColor="white" title="Ingresar Orden">
+              <FormControl isRequired>
+                <InputGroup>
+                  <Input
+                    placeholder="Codigo de Insumo"
+                    name="name"
+                    type="text"
+                    value={context.state.formProduct.name}
+                    onChange={context.handleProductInput}
+                  />
+                </InputGroup>
+              </FormControl>
               <FormControl isRequired>
                 <InputGroup>
                   <Input

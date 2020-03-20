@@ -40,7 +40,7 @@ function Inventory ({ history }) {
         <TabList mb="1em">
           <Tab>Insumos </Tab>
           <Tab>Productos</Tab>
-          <Tab>Stock</Tab>
+          <Tab>Almacen</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -51,7 +51,7 @@ function Inventory ({ history }) {
                   w="10vw"
                   onClick={() => go("/services/inventory/supplies")}
                 >
-                  + Agregar Insumo
+                  Agregar Insumo
               </Button>
             </Flex>
           <Stack m={3}>
@@ -59,6 +59,7 @@ function Inventory ({ history }) {
                 <thead>
                   <tr>
                     <th>Tipo</th>
+                    <th>Codigo</th>
                     <th>Descripcion</th>
                     <th>Proveedor</th>
                     <th>Precio</th>
@@ -71,6 +72,7 @@ function Inventory ({ history }) {
                 <tbody key={id} >
                   <tr>
                     <td>{supplie.tipo}</td>
+                    <td>{supplie.codigo}</td>
                     <td>{supplie.descripcion}</td>
                     <td>{supplie.proveedor}</td>
                     <td>{supplie.precioUnit}</td>
@@ -91,7 +93,7 @@ function Inventory ({ history }) {
                 w="12vw"
                 onClick={() => go("/services/inventory/products")}
               >
-              + Agregar Producto
+              Agregar Producto
               </Button>
             </Flex>
             <Stack m={3}>
@@ -120,7 +122,90 @@ function Inventory ({ history }) {
               </Stack>
           </TabPanel>
           <TabPanel>
-            <Flex justify="center">
+          
+          <Tabs isFitted variant="enclosed">
+          <TabList mb="1em">
+          <Tab>Entradas</Tab>
+          <Tab>Salidas</Tab>
+          <Tab>Stock</Tab>
+        </TabList>
+        <TabPanels>
+        <TabPanel>
+          <Flex justify="center">
+            <Button
+              backgroundColor="c2.100"
+              color="white"
+              w="12vw"
+            >
+            Agregar Entradas
+            </Button>
+          </Flex>
+          <Stack m={3}>
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Codigo de Insumo</th>
+                  <th>Descripcion</th>
+                  <th>Cantidad</th>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1/03/20</td>
+                  <td>A.1.14.11</td>
+                  <td>Cable</td>
+                  <td>10000</td>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </tbody>
+            </Table>
+          </Stack>
+          </TabPanel>
+        <TabPanel>
+        <Flex justify="center">
+            <Button
+              backgroundColor="c2.100"
+              color="white"
+              w="12vw"
+            >
+            Agregar Salidas
+            </Button>
+          </Flex>
+          <Stack m={3}>
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Codigo de Insumo</th>
+                  <th>Descripcion</th>
+                  <th>Cantidad</th>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>6/03/20</td>
+                  <td>A.1.14.11</td>
+                  <td>Cable</td>
+                  <td>10000</td>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </tbody>
+            </Table>
+          </Stack>
+        </TabPanel>
+        <TabPanel>
+        <Flex justify="center">
               <Button
                 backgroundColor="c2.100"
                 color="white"
@@ -158,6 +243,9 @@ function Inventory ({ history }) {
                   ))}
                 </Table>
               </Stack>
+        </TabPanel>
+        </TabPanels>
+      </Tabs>
           </TabPanel>
         </TabPanels>
       </Tabs>

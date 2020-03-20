@@ -27,9 +27,9 @@ function Sales ({ history }) {
       <Stack backgroundColor="white">
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
-          <Tab>Ventas de mostrador</Tab>
-          <Tab>Ventas menudeo</Tab>
-          <Tab>Ventas mayoreo</Tab>
+          <Tab>Cotizacion</Tab>
+          <Tab>Pedido</Tab>
+          <Tab>Remision</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -39,7 +39,7 @@ function Sales ({ history }) {
                 color="white"
                 w="13vw"
               >
-                + Agregar Mostrador
+                Agregar Cotizacion
             </Button>
           </Flex>
           <Stack m={3}>
@@ -47,7 +47,10 @@ function Sales ({ history }) {
               <thead>
                 <tr>
                   <th>Fecha</th>
+                  <th>Codigo</th>
+                  <th>Cliente</th>
                   <th>Producto</th>
+                  <th>Tiempo de Entrega</th>
                   <th>Cantidad</th>
                   <th>Monto</th>
                   <th><Icon name="view"/></th>
@@ -56,10 +59,13 @@ function Sales ({ history }) {
               </thead>
               <tbody>
                 <tr>
-                  <td>11/01/20</td>
-                  <td>Cable Termoadaptable 1550rc</td>
-                  <td>500 metros</td>
-                  <td>6850</td>
+                  <td>1/03/20</td>
+                  <td>A001</td>
+                  <td>MABE</td>
+                  <td>Arnes 0061</td>
+                  <td>10 dias</td>
+                  <td>500 pzas</td>
+                  <td>1900</td>
                   <th><Icon name="view"/></th>
                   <th><Icon name="delete"/></th>
                 </tr>
@@ -74,7 +80,7 @@ function Sales ({ history }) {
                 color="white"
                 w="12vw"
               >
-                + Agregar Menudeo
+                Agregar Pedido
             </Button>
           </Flex>
           <Stack m={3}>
@@ -82,7 +88,7 @@ function Sales ({ history }) {
               <thead>
                 <tr>
                   <th>Fecha</th>
-                  <th>Factura</th>
+                  <th>Codido de Pedido</th>
                   <th>Cliente</th>
                   <th>Producto</th>
                   <th>Cantidad</th>
@@ -95,8 +101,8 @@ function Sales ({ history }) {
               <tbody>
                 <tr>
                   <th>5/02/20</th>
-                  <th>Factura 001</th>
-                  <th>Mabe</th>
+                  <th>P001</th>
+                  <th>MABE</th>
                   <th>Arnes 004 con terminal de cobre</th>
                   <th>500pzas</th>
                   <th>8950</th>
@@ -110,24 +116,14 @@ function Sales ({ history }) {
           </TabPanel>
           <TabPanel>
           <Flex justify="center">
-            <Button
-              backgroundColor="c2.100"
-              color="white"
-              w="11vw"
-            >
-              + Agregar Mayoreo
-            </Button>
           </Flex>
           <Stack m={3}>
             <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
                   <th>Fecha</th>
-                  <th>Factura</th>
-                  <th>Cliente</th>
-                  <th>Producto</th>
-                  <th>Cantidad</th>
-                  <th>Descuento</th>
+                  <th>Codigo de Pedido</th>
+                  <th>Descripcion</th>
                   <th>Monto</th>
                   <th><Icon name="view"/></th>
                   <th><Icon name="edit"/></th>
@@ -136,13 +132,10 @@ function Sales ({ history }) {
               </thead>
               <tbody>
                 <tr>
-                <th>5/02/20</th>
-                  <th>Factura 001</th>
-                  <th>Mabe</th>
-                  <th>Arnes 004 con terminal de cobre</th>
-                  <th>5000pzas</th>
-                  <th>10%</th>
-                  <th>20000</th>
+                  <th>5/02/20</th>
+                  <th>P001</th>
+                  <th>Venta de Arneses</th>
+                  <th>8950</th>
                   <th><Icon name="view"/></th>
                   <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>

@@ -27,9 +27,9 @@ function Purchases ({ history }) {
       <Stack backgroundColor="white">
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
-          <Tab>Insumos</Tab>
-          <Tab>Nomina</Tab>
-          <Tab>Servicios</Tab>
+          <Tab>Cotizacion</Tab>
+          <Tab>Orden de Compra</Tab>
+          <Tab>Resumen de Compras</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -39,7 +39,7 @@ function Purchases ({ history }) {
               color="white"
               w="15vw" 
             >
-            + Compra de Insumo
+            Agregar Cotizacion
             </Button>
           </Flex>
           <Stack m={3}>
@@ -47,9 +47,12 @@ function Purchases ({ history }) {
               <thead>
                 <tr>
                   <th>Fecha</th>
-                  <th>Concepto</th>
+                  <th>Codigo de Insumo</th>
                   <th>Descripcion</th>
+                  <th>Tiempo de entrega</th>
+                  <th>Cantidad</th>
                   <th>Monto</th>
+                  <th>Moneda</th>
                   <th><Icon name="view"/></th>
                   <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>
@@ -58,9 +61,42 @@ function Purchases ({ history }) {
               <tbody>
                 <tr>
                   <td>27/02/20</td>
-                  <td>Officinas</td>
-                  <td>Compra de productos de papeleria</td>
+                  <td>A.1.14.11</td>
+                  <td>Cable Termoadaptable</td>
+                  <td>2 dias habiles</td>
+                  <td>10000 metros</td>
                   <td>600</td>
+                  <td>DLLS</td>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </tbody>
+            </Table>
+          </Stack>
+          </TabPanel>
+          <TabPanel>
+          <Flex justify="center">
+          </Flex>
+          <Stack m={3}>
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>Codigo de Insumo</th>
+                  <th>Insumo</th>
+                  <th>Cantidad Requerida</th>
+                  <th>Fecha</th>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>A.1.14.11</td>
+                  <td>Cable Termoadaptable</td>
+                  <td>10000</td>
+                  <td>1/03/20</td>
                   <th><Icon name="view"/></th>
                   <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>
@@ -76,7 +112,7 @@ function Purchases ({ history }) {
               color="white"
               w="15vw"
             >
-            + Pago de Nomina
+            Agregar Compra
             </Button>
           </Flex>
           <Stack m={3}>
@@ -84,46 +120,9 @@ function Purchases ({ history }) {
               <thead>
                 <tr>
                   <th>Fecha</th>
-                  <th>Puesto</th>
-                  <th>Nombre</th>
-                  <th>Monto</th>
-                  <th><Icon name="view"/></th>
-                  <th><Icon name="edit"/></th>
-                  <th><Icon name="delete"/></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1/03/20</td>
-                  <td>Contadora</td>
-                  <td>Maria del Carmen Alvarez Romo</td>
-                  <td>7500</td>
-
-                  <th><Icon name="view"/></th>
-                  <th><Icon name="edit"/></th>
-                  <th><Icon name="delete"/></th>
-                </tr>
-              </tbody>
-            </Table>
-          </Stack>
-          </TabPanel>
-          <TabPanel>
-          <Flex justify="center">
-            <Button
-              backgroundColor="c2.100"
-              color="white"
-              w="12vw"
-            >
-            + Pago de Servicios
-            </Button>
-          </Flex>
-          <Stack m={3}>
-            <Table striped bordered hover variant="dark">
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Servicio</th>
+                  <th>Tipo</th>
                   <th>Descripcion</th>
+                  <th>Cantidad</th>
                   <th>Monto</th>
                   <th><Icon name="view"/></th>
                   <th><Icon name="edit"/></th>
@@ -133,9 +132,10 @@ function Purchases ({ history }) {
               <tbody>
                 <tr>
                   <td>1/03/20</td>
-                  <td>Luz</td>
-                  <td>Pago de luz primer bimestre</td>
-                  <td>600</td>
+                  <td>Nomina </td>
+                  <td>Contadora -Maria del Carmen Alvarez Romo</td>
+                  <td>1</td>
+                  <td>7500</td>
                   <th><Icon name="view"/></th>
                   <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>

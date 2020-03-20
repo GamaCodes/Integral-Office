@@ -29,7 +29,7 @@ function Accounting ({ history }) {
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
           <Tab>Facturas</Tab>
-          <Tab>Declaraciones</Tab>
+          <Tab>Bancos</Tab>
           <Tab>Ingresos</Tab>
           <Tab>Egresos</Tab>
         </TabList>
@@ -81,18 +81,41 @@ function Accounting ({ history }) {
           </TabPanel>
           <TabPanel>
           <Flex justify="center">
-            <Button
-              backgroundColor="c2.100"
-              color="white"
-              w="12vw"
-              onClick={() => go("/services/accounting")} 
-            >
-            Resumen
-            </Button>
+
           </Flex>
           <Stack m={3}>
             <Table striped bordered hover variant="dark">
               <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Tipo</th>
+                  <th>Descripcion</th>
+                  <th>Monto</th>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1/03/20</td>
+                  <td>Contado</td>
+                  <td>Ventas mostrador del 1/03/20</td>
+                  <td>45000</td>
+                  <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
+                  <th><Icon name="delete"/></th>
+                </tr>
+              </tbody>
+            </Table>
+          </Stack>
+          </TabPanel>
+          <TabPanel>
+          <Flex justify="center">
+          </Flex>
+          <Stack m={3}>
+            <Table striped bordered hover variant="dark">
+            <thead>
                 <tr>
                   <th>Fecha</th>
                   <th>Tipo</th>
@@ -107,45 +130,8 @@ function Accounting ({ history }) {
                 <tr>
                   <td>1/03/20</td>
                   <td>Pago de Nomina</td>
-                  <td>Quincena Samantha M.</td>
+                  <td>Quincena Luis Angel Araujo Alvarez</td>
                   <td>9400</td>
-                  <th><Icon name="view"/></th>
-                  <th><Icon name="edit"/></th>
-                  <th><Icon name="delete"/></th>
-                </tr>
-              </tbody>
-            </Table>
-          </Stack>
-          </TabPanel>
-          <TabPanel>
-          <Flex justify="center">
-            <Button
-              backgroundColor="c2.100"
-              color="white"
-              w="12vw"
-            >
-            Resumen
-            </Button>
-          </Flex>
-          <Stack m={3}>
-            <Table striped bordered hover variant="dark">
-              <thead>
-                <tr>
-                  <th>Fecha</th>
-                  <th>Tipo</th>
-                  <th>Descripcion</th>
-                  <th>Monto</th>
-                  <th><Icon name="view"/></th>
-                  <th><Icon name="edit"/></th>
-                  <th><Icon name="delete"/></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1/03/20</td>
-                  <td>Ventas de mostrador</td>
-                  <td>Ventas mostrador del 1/03/20</td>
-                  <td>45000</td>
                   <th><Icon name="view"/></th>
                   <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>

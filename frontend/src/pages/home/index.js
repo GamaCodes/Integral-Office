@@ -13,12 +13,12 @@ const service = [
   {
     name:'Inventario',
     src:'https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg?cs=srgb&dl=men-going-around-a-warehouse-1797428.jpg&fm=jpg',
-    text:'Inventario   blablabla blablabla v vblablabla blablabla blablabla blablabla blablabla blablabla Inventario   blablabla blablabla v vblablabla blablabla blablabla blablabla blablabla blablabla Inventario   blablabla blablabla v vblablabla blablabla blablabla blablabla blablabla blablabla Inventario   blablabla blablabla v vblablabla blablabla blablabla blablabla blablabla blablabla Inventario   blablabla blablabla v vblablabla blablabla blablabla blablabla blablabla blablabla Inventario   blablabla blablabla v vblablabla blablabla blablabla blablabla blablabla blablabla Inventario   blablabla blablabla v vblablabla blablabla blablabla blablabla blablabla blablabla Inventario   blablabla blablabla v vblablabla blablabla blablabla blablabla blablabla blablabla '
+    text:'Inventario'
   },
   {
-    name:'Cotizaciones',
+    name:'Catalogos',
     src:'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?cs=srgb&dl=person-holding-black-pen-1109541.jpg&fm=jpg',
-    text:'Cotizaciones'
+    text:'Catalogos'
   },
   {
     name:'Compras',
@@ -35,9 +35,13 @@ const service = [
     src:'https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg?cs=srgb&dl=accounting-analytics-balance-black-and-white-209224.jpg&fm=jpg',
     text:'Contabilidad'
   },{
-    name:'Finanzas',
+    name:'Cuentas',
     src:'https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?cs=srgb&dl=person-holding-blue-ballpoint-pen-on-white-notebook-669610.jpg&fm=jpg',
     text:'Cuentas'
+  },{
+    name:'Reportes',
+    src:'https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg?cs=srgb&dl=black-samsung-tablet-computer-106344.jpg&fm=jpg',
+    text:'Reportes'
   }
 ]
 
@@ -140,7 +144,7 @@ function Home({ width, history }) {
                   <br></br>
                   <li>Integración de las distintas bases de datos de una compañía en un solo programa.</li>
                   <br></br>
-                  <li>Ahorro de tiempo y costes.</li>
+                  <li>Ahorro de tiempo y costos.</li>
                   <br></br>
                   <li>Exportamos tu base de datos de excel</li>
                 </ul>

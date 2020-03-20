@@ -20,33 +20,38 @@ const service = [
     link:'inventory'
   },
   {
-    name:'Cotizaciones',
+    name:'Catalogos',
     src:'https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?cs=srgb&dl=person-holding-black-pen-1109541.jpg&fm=jpg',
-    badge:'Cotizaciones',
+    badge:'Reportes',
     link:'quotation'
   },
   {
     name:'Compras',
     src:'https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?cs=srgb&dl=blur-business-coffee-commerce-273222.jpg&fm=jpg',
-    badge:['Ordenes'],
+    badge:'Ordenes',
     link:'purchases'
   },
   {
     name:'Ventas',
     src:'https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?cs=srgb&dl=blank-business-composition-computer-373076.jpg&fm=jpg',
-    badge:'Tickets',
+    badge:'Pedidos',
     link:'sales'
   },
   {
     name:'Contabilidad',
     src:'https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg?cs=srgb&dl=accounting-analytics-balance-black-and-white-209224.jpg&fm=jpg',
-    badge:'Descarga de facturas',
+    badge:'Movimientos',
     link:'accounting'
   },{
     name:'Finanzas',
     src:'https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?cs=srgb&dl=person-holding-blue-ballpoint-pen-on-white-notebook-669610.jpg&fm=jpg',
     badge:'Cuentas',
     link:'finance'
+  },{
+    name:'Reportes',
+    src:'https://images.pexels.com/photos/106344/pexels-photo-106344.jpeg?cs=srgb&dl=black-samsung-tablet-computer-106344.jpg&fm=jpg',
+    badge:'Reportes',
+    link:'reportes'
   }
 ]
 

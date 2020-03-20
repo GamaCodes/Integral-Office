@@ -28,43 +28,34 @@ function Finance ({ history }) {
       <Stack backgroundColor="white">
       <Tabs isFitted variant="enclosed">
         <TabList mb="1em">
-          <Tab>Creditos</Tab>
-          <Tab>Pagos</Tab>
-          <Tab>Conciliaciones</Tab>
+          <Tab>Cuentas Por Pagar</Tab>
+          <Tab>Cuentas Por Cobrar</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
           <Flex justify="center">
-            <Button
-              backgroundColor="c2.100"
-              color="white"
-              w="10vw"
-              onClick={() => go("/services/finance")} 
-            >
-            Agregar Credito
-            </Button>
           </Flex>
           <Stack m={3}>
             <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
-                  <th>Fecha</th>
+                  <th>Cogido de Proveedor</th>
                   <th>Proveedor</th>
-                  <th>Descripcion</th>
-                  <th>Periodo</th>
                   <th>Monto</th>
+                  <th>Fecha de pago</th>
                   <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1/03/20</td>
+                  <td>000A1</td>
                   <td>Balatron</td>
-                  <td>Credito de materia prima</td>
-                  <td>6 meses</td>
-                  <td>$ 60,000</td>
+                  <td>6,000</td>
+                  <td>20/03/20</td>
                   <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>
                 </tr>
               </tbody>
@@ -73,59 +64,33 @@ function Finance ({ history }) {
           </TabPanel>
           <TabPanel>
           <Flex justify="center">
-            <Button
-              backgroundColor="c2.100"
-              color="white"
-              w="10vw"
-              onClick={() => go("/services/finance")} 
-            >
-            Agregar Pago
-            </Button>
           </Flex>
           <Stack m={3}>
             <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
-                  <th>Fecha</th>
-                  <th>Concepto</th>
-                  <th>Descripcion</th>
+                  <th>Cogido de Cliente</th>
+                  <th>Cliente</th>
                   <th>Monto</th>
+                  <th>Fecha de pago</th>
                   <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>10/02/20</td>
-                  <td>Credito</td>
-                  <td>Primer pago de Credito Balatron</td>
-                  <td>6,000</td>
+                  <td>0001A</td>
+                  <td>MABE</td>
+                  <td>60,000</td>
+                  <td>10/03/20</td>
                   <th><Icon name="view"/></th>
+                  <th><Icon name="edit"/></th>
                   <th><Icon name="delete"/></th>
                 </tr>
               </tbody>
             </Table>
           </Stack>
-          </TabPanel>
-          <TabPanel>
-          <Flex justify="center">
-            <Button
-              backgroundColor="c2.100"
-              color="white"
-              w="13vw"
-              onClick={() => go("/services/finance")} 
-            >
-            Agregar movimiento
-            </Button>
-          </Flex>
-          <Flex justify="center" w="50vw">
-            <img
-              className="d-block w-100"
-              src="/construccion.jpg"
-              alt="En mantenimiento"
-              justify="center"
-            />
-          </Flex>
           
           </TabPanel>
         </TabPanels>
