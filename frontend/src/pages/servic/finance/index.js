@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { MyContext } from '../../../context'
-import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Flex, Button, Icon } from "@chakra-ui/core";
+import { Stack, Tab, Tabs, TabList, TabPanels, TabPanel, Flex, Icon } from "@chakra-ui/core";
 import { Table } from 'react-bootstrap';
 
 function Finance ({ history }) {
@@ -8,7 +8,7 @@ function Finance ({ history }) {
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
   })
-  const go = path => history.push(path);
+
   return (
     <Stack
       minH="90vh"

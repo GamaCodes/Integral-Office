@@ -8,7 +8,7 @@ function Accounting ({ history }) {
   useEffect(() => {
     if (!context.state.isLogged) return history.push('/login')
   })
-  const go = path => history.push(path);
+
   return (
     <Stack
       minH="90vh"
