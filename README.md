@@ -1,4 +1,4 @@
-# Bienvenido a Iron Office!
+# Bienvenido a Integral Office!
 Somos tu aliado en automatización de procesos administrativos para cada sector de tu empresa.
 
 # Inicio
